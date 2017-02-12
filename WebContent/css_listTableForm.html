@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>List Table Form</title>
+	</head>
+	<body>
+		<a href="index.html">Return to Index</a>
+		<h1>項目符號樣式</h1>
+		<p class="describtion">
+			list-style-type屬性：<br />
+			可以讓你控制項目符號的形狀或樣式。<br />
+			可以用在套用到&lt;ol&gt;、&lt;ul&gt;、&lt;li&gt;元素的規則上。<br />
+			在項目清單上可以使用下列屬性值: none、disc、circle、square。<br />
+			在編號清單上可以使用下列屬性值: decimal、decimal-leading-zero、lower-alpha、upper-alpha、lower-roman、upper-roman。
+		</p>
+		<p class="code">
+			ul.two {<br />
+			&emsp;list-style-type: circle;<br />
+			}
+		</p>
+		<a href="list_style_type.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>使用圖片作為項目符號</h1>
+		<p class="describtion">
+			list-style-image屬性。<br />
+			語法: list-style-image: url(&quot;images/list_icon.png&quot);<br />
+			可以用在套用到&lt;ul&gt;、&lt;li&gt;元素的規則上。<br />
+			下例也示範了margin屬性的用法，增加了清單中的每個項目的垂直間距。
+		</p>
+		<p class="code">
+			ul {<br />
+			&emsp;list-style-image: url(&quot;images/list_icon.png&quot);<br />
+			}<br />
+			li {<br />
+			&emsp;margin: 10px 0px 0px 0px;<br />
+			}
+		</p>
+		<a href="list_style_image.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>項目符號的位置</h1>
+		<p class="describtion">
+			list-style-position屬性。指定了項目符號應該出現在包含項目之方框的裡面還是外面。<br />
+			語法: list-style-position: outside(符號位在文字區塊的左側，是預設值)、inside(符號位在文字方框內部，會縮排);<br />
+		</p>
+		<p class="code">
+			ul.one {<br />
+			&emsp;list-style-position: outside;<br />
+			}<br />
+			ul.two {<br />
+			&emsp;list-style-position: inside;<br />
+			}
+		</p>
+		<a href="list_style_position.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>清單速記</h1>
+		<p class="describtion">
+			list-style屬性。指定了項目符號應該出現在包含項目之方框的裡面還是外面。<br />
+			語法: list-style: inside circle;<br />
+		</p>
+		<p class="code">
+			ul.one {<br />
+			&emsp;list-style: inside circle;<br />
+			}
+		</p>
+		<a href="list_style.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>表格屬性</h1>
+		<p class="describtion">
+			<table>
+				<tr>
+					<th scope="col">屬性</th>
+					<th scope="col">功能</th>
+				</tr>
+				<tr>
+					<td>width</td>
+					<td>會設定表格寬度。</td>
+				</tr>
+				<tr>
+					<td>padding</td>
+					<td>設定了每個表格儲存格邊框和內容之間的距離。</td>
+				</tr>
+				<tr>
+					<td>text-transform</td>
+					<td>將表格標題的內容轉為大寫。</td>
+				</tr>
+				<tr>
+					<td>letter-spacing</td>
+					<td>字母間的空白。</td>
+				</tr>
+				<tr>
+					<td>border-top、border-bottom</td>
+					<td>設定表格標題的上下邊框。</td>
+				</tr>
+				<tr>
+					<td>text-align</td>
+					<td>將文字對齊表格儲存格。</td>
+				</tr>
+				<tr>
+					<td>background-color</td>
+					<td>用來改變表格列的背景色。</td>
+				</tr>
+				<tr>
+					<td>:hover</td>
+					<td>滑鼠移到某表格列上的時候，將它反白起來。</td>
+				</tr>
+			</table>
+		</p>
+		<p class="code">
+			ul.one {<br />
+			&emsp;list-style: inside circle;<br />
+			}
+		</p>
+		<a href="table_properties.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>空白儲存格的邊框</h1>
+		<p class="describtion">
+			empty-cells屬性，指定空白儲存格的邊框是否要顯示。<br />
+			empty-cells: show(顯示空白儲存格的邊框)、hide(隱藏空白儲存格的邊框)、inherit(當一個表格位在另一個表格內的時候，內部的表格會繼承外部表格容器的規則)。
+		</p>
+		<p class="code">
+			table.one {<br />
+			&emsp;empty-cells: show;<br />
+			}
+			table.two {<br />
+			&emsp;empty-cells: hide;<br />
+			}
+		</p>
+		<a href="empty_cells.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>儲存格之間的間距</h1>
+		<p class="describtion">
+			border-spacing屬性，控制相連儲存格之間的距離。<br />
+			border-spacing: 5px 15px;(水平和垂直間距，也可以統一只寫出一個間距值)。<br />
+			當儲存格使用邊框的時候，在兩個儲存格相交處，線條應該是正常外緣的兩倍粗，可以使用border-collapse屬性來解決此情況。<br />
+			border-collapse: collapse(邊框交疊成單一邊框，border-spacing、empty-cell都會被忽略)、separate(邊框會互相分開，會遵守border-spacing、empty-cell)。
+		</p>
+		<p class="code">
+			table.one {<br />
+			&emsp;border-spacing: 5px 15px;<br />
+			}
+			table.two {<br />
+			&emsp;border-collapse: collapse;<br />
+			}
+		</p>
+		<a href="gaps_between_cells.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>樣式化文字輸入欄</h1>
+		<p class="describtion">
+			<table>
+				<tr>
+					<th scope="col">屬性</th>
+					<th scope="col">功能</th>
+				</tr>
+				<tr>
+					<td>font-size</td>
+					<td>設定了使用者輸入的文字長度。</td>
+				</tr>
+				<tr>
+					<td>color</td>
+					<td>設定了顏色。</td>
+				</tr>
+				<tr>
+					<td>background-color</td>
+					<td>設定了輸入欄位的背景色。</td>
+				</tr>
+				<tr>
+					<td>border</td>
+					<td>在輸入欄為四周加了邊框。</td>
+				</tr>
+				<tr>
+					<td>border-radius</td>
+					<td>可以用來製作邊框圓角。</td>
+				</tr>
+				<tr>
+					<td>:focus</td>
+					<td>此擬類別，在使用者滑鼠指標移到欄位上時，改變文字輸入欄之背景色。</td>
+				</tr>
+				<tr>
+					<td>background-image</td>
+					<td>設定了輸入欄位的圖像。</td>
+				</tr>
+			</table>
+		</p>
+		<p class="code">
+			input {<br />
+			&emsp;font-size: 120%;<br />
+			&emsp;color: #5a5854;<br />
+			&emsp;background-color: #f2f2f2;<br />
+			&emsp;border: 1px solid #bdbdbd;<br />
+			&emsp;border-radius: 5px;<br />
+			&emsp;padding: 5px 5px 5px 30px;<br />
+			&emsp;background-repeat: no-repeat;<br />
+			&emsp;background-position: 8px 9px;<br />
+			&emsp;display: block;<br />
+			&emsp;margin-bottom: 10px;<br />
+			}<br />
+			input:focus {<br />
+			&emsp;background-color: #ffffff;<br />
+			&emsp;border: 1px solid #blele4;<br />
+			}<br />
+			input#email {<br />
+			&emsp;background-image: url("images/email.png");<br />
+			}<br />
+			input#twitter {<br />
+			&emsp;background-image: url("images/twitter.png");<br />
+			}<br />
+			input#web {<br />
+			&emsp;background-image: url("images/web.png");<br />
+			}
+		</p>
+		<a href="styling_text_inputs.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>樣式化送出按鈕</h1>
+		<p class="describtion">
+			<table>
+				<tr>
+					<th scope="col">屬性</th>
+					<th scope="col">功能</th>
+				</tr>
+				<tr>
+					<td>color</td>
+					<td>改變按鈕上的文字顏色。</td>
+				</tr>
+				<tr>
+					<td>text-shadow</td>
+					<td>將文字呈現出3D效果。</td>
+				</tr>
+				<tr>
+					<td>border-bottom</td>
+					<td>常見用法是使按鈕的底邊框稍微變粗，按鈕看起來更立體。</td>
+				</tr>
+				<tr>
+					<td>background-color</td>
+					<td>在項目中凸顯送出按鈕，使按鈕有一致的樣式。</td>
+				</tr>
+				<tr>
+					<td>:hover</td>
+					<td>滑鼠移至按鈕上時的處理。</td>
+				</tr>
+			</table>
+		</p>
+		<p class="code">
+			input#submit {<br />
+			&emsp;color: #444444;<br />
+			&emsp;text-shadow: 0px 1px 1px #ffffff;<br />
+			&emsp;border-bottom: 2px solid #b2b2b2;<br />
+			&emsp;background-color: #b9e4e3;<br />
+			&emsp;background: -webkit-gradient(linear, left top, left bottom, from(#beeae9), to(#a8cfce));<br />
+			&emsp;background: -moz-linear-gradient(top, #beeae9, #a8cfce);<br />
+			&emsp;background: -ms-linear-gradient(top, #beeae9, #a8cfce);<br />
+			}<br />
+			input#submit:hover {<br />
+			&emsp;color: #333333;<br />
+			&emsp;border: 1px solid #a4a4a4;<br />
+			&emsp;border-top: 2px solid #b2b2b2;<br />
+			&emsp;background-color: #a0dbc4;<br />
+			&emsp;background: -webkit-gradient(linear, left top, left bottom, from(#a8cfce), to(#beeae9));<br />
+			&emsp;background: -moz-linear-gradient(top, #a8cfce, #beeae9);<br />
+			&emsp;background: -o-linear-gradient(top, #a8cfce, #beeae9);<br />
+			&emsp;background: -ms-linear-gradient(top, #a8cfce, #beeae9);<br />
+			}
+		</p>
+		<a href="styling_submit_buttons.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>將表單組和標題樣式化</h1>
+		<p class="describtion">
+			<table>
+				<tr>
+					<th scope="col">屬性</th>
+					<th scope="col">功能</th>
+				</tr>
+				<tr>
+					<td>width</td>
+					<td>控制表單組的寬度。</td>
+				</tr>
+				<tr>
+					<td>color</td>
+					<td>控制文字顏色。</td>
+				</tr>
+				<tr>
+					<td>background-color</td>
+					<td>改變項目後的背景顏色。</td>
+				</tr>
+				<tr>
+					<td>border</td>
+					<td>控制表單組或標題周圍的邊框外觀。</td>
+				</tr>
+				<tr>
+					<td>border-radius</td>
+					<td>圓角邊框。</td>
+				</tr>
+				<tr>
+					<td>padding</td>
+					<td>元素內距。</td>
+				</tr>
+			</table>
+		</p>
+		<p class="code">
+			fieldset {<br />
+			&emsp;width: 250px;<br />
+			&emsp;border: 1px solid #dcdcdc;<br />
+			&emsp;border-radius: 10px;<br />
+			&emsp;padding: 20px;<br />
+			&emsp;text-align: right;<br />
+			}<br />
+			legend {<br />
+			&emsp;background-color: #efefefef;<br />
+			&emsp;border: 1px solid #dcdcdc;<br />
+			&emsp;border-radius: 10px;<br />
+			&emsp;padding: 10px 20px;<br />
+			&emsp;text-align: left;<br />
+			&emsp;text-transform: uppercase;<br />
+			}
+		</p>
+		<a href="aligning_form_controls.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>對齊表單控制項: 問題與解決方案</h1>
+		<p class="describtion">
+			問題: <br />
+			&emsp;表單元素的標籤通常長度不一，這代表表單控制項不會對齊成一直線。<br />
+			&emsp;在範例中，像使用者詢問的每個主題都被個別放在一個&lt;div&gt;元素中，以確保每個問題會出現在新的一行。如果表單控制項對齊一條垂直線的話，使用者會比較方便填寫。<br />
+			&emsp;如果你看一下我們詢問性別的那一欄，兩個單選鈕都有自己的&lt;label&gt;。這裡在標題上加了&lt;span&gt;元素來協助對齊這些控制項。<br />
+			解決方案: <br />
+			&emsp;在文字輸入欄中，標題位在&lt;label&gt;元素裡；在單選鈕中，標題是在&lt;span&gt;元素上。兩者都有一個class屬性，值為title。<br />
+			&emsp;我們可以使用名為float的屬性來將標題移到頁面左側。<br />
+			&emsp;設定這些元素的width屬性，我們就可以確定這些標題會占用同樣的寬度，這樣一來，它們旁邊的表單控制項就會對齊。<br />
+			&emsp;這裡用了text-align屬性將標題靠右對齊，以及padding屬性來確認標題方框裡的文字和表格控制項之間會有空格。<br />
+			&emsp;容納了表單各行的&lt;div&gt;元素也套用了樣式(固定其寬度並製作每列之間的垂直間格)。最後送出按鈕也設定靠右對齊。
+		</p>
+		<p class="code">
+			<table>
+				<tr>
+					<th>html</th>
+					<th>css</th>
+				</tr>
+				<tr>
+					<td class="html">
+						&lt;form action=&quot;example.php&quot; method=&quot;post&quot;&gt;<br />
+						&emsp;&lt;div&gt;<br />
+						&emsp;&emsp;&lt;label for=&quot;name&quot; class=&quot;title&quot;&gt;Name:&lt;/label&gt;<br />
+						&emsp;&emsp;&lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; /&gt;<br />
+						&emsp;&lt;/div&gt;<br />
+						&emsp;&lt;div&gt;<br />
+						&emsp;&emsp;&lt;label for=&quot;email&quot; class=&quot;title&quot;&gt;Email:&lt;/label&gt;<br />
+						&emsp;&emsp;&lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; /&gt;<br />
+						&emsp;&lt;/div&gt;<br />
+						&emsp;&lt;div&gt;<br />
+						&emsp;&emsp;&lt;span class=&quot;title&quot;&gt;Gender:&lt;/span&gt;<br />
+						&emsp;&emsp;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;male&quot; value=&quot;M&quot; /&gt;<br />
+						&emsp;&emsp;&lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;<br />
+						&emsp;&emsp;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; id=&quot;female&quot; value=&quot;F&quot; /&gt;<br />
+						&emsp;&emsp;&lt;label for=&quot;female&quot;&gt;Female&lt;/label&gt;&lt;br /&gt;<br />
+						&emsp;&lt;/div&gt;<br />
+						&emsp;&lt;div&gt;<br />
+						&emsp;&emsp;&lt;input type=&quot;submit&quot; value=&quot;Register&quot; id=&quot;submit&quot; /&gt;<br />
+						&emsp;&lt;/div&gt;<br />
+						&lt;/form&gt;
+					</td>
+					<td class="css">
+						div {<br />
+						&emsp;border-bottom: 1px solid #efefef;<br />
+						&emsp;margin: 10px;<br />
+						&emsp;padding-bottom: 10px;<br />
+						&emsp;width: 260px;<br />
+						}<br />
+						.title {<br />
+						&emsp;float: left;<br />
+						&emsp;width: 100px;<br />
+						&emsp;text-align: right;<br />
+						&emsp;padding-right: 10px;<br />
+						}<br />
+						.radio-buttons label {<br />
+						&emsp;float: none;<br />
+						}<br />
+						.submit {<br />
+						&emsp;text-align: right;<br />
+						}
+					</td>
+				</tr>
+			</table>
+		</p>
+		<a href="aligning_form_controls_solution.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>游標樣式</h1>
+		<p class="describtion">
+			cursor屬性可以讓你控制要顯示給使用者看的滑鼠游標樣式。
+		</p>
+		<p class="code">
+			cursor: auto||crosshair||default||pointer||move||text||wait||help||url("cursor.gif");
+		</p>
+		<a href="cursor.html" target="_blank">DEMO</a>
+		<hr />
+	</body>
+</html>

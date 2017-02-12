@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Layout</title>
+	</head>
+	<body>
+		<a href="index.html">Return to Index</a>
+		<h1>正常流向</h1>
+		<p class="describtion">
+			在正常流向中，每個區塊層級元素都是由上往下層疊排列。這是瀏覽器處理HTML元素的預設方式，所以不需要使用CSS屬性來指定正常流向。
+			不過他的語法是: position: static;
+		</p>
+		<a href="normal_flow.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>相對定位</h1>
+		<p class="describtion">
+			相對定位移動元素的方式，是相對於原本正常流向的位置。<br />
+			你可以使用position屬性並將值設為relative，以表明該元素要使用相對定位。<br />
+			接著就可以使用top、bottom來控制距離上下邊框的距離；left、right來控制距離左右邊框的距離。<br />
+			方框偏移的屬性值通常是以像素、百分比或em為單位。
+		</p>
+		<p class="code">
+			p.position_relative {<br />
+			&emsp;position: relative;<br />
+			&emsp;top: 10px;<br />
+			&emsp;left: 100px;<br />
+			}
+		</p>
+		<a href="position_relative.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>絕對定位</h1>
+		<p class="describtion">
+			當position屬性的值是absolute時，方框會被移到正常流向之外，而且不再影響頁面上的其他元素。(彷彿他們不在頁面上一樣)<br />
+			position: absolute;之後可以使用偏移屬性指定與頁面邊緣的距離(top、bottom、left、right)。<br />
+			大部分的瀏覽器都會在&lt;h1&gt;的上方預設加入邊界，如果你想移除這個邊界，可以加入margin: 0px;來解決。
+		</p>
+		<p class="code">
+			h1 {<br />
+			&emsp;position: absolute;<br />
+			&emsp;top: 0px;<br />
+			&emsp;left: 750px;<br />
+			&emsp;width: 250px;<br />
+			&emsp;margin: 0px;<br />
+			}
+		</p>
+		<a href="position_absolute.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>固定定位</h1>
+		<p class="describtion">
+			固定定位是一種絕對定位，需要將position屬性的值設為fixed。<br />
+			它會將元素放在與瀏覽器視窗相對的位置上，因此當使用者向下捲動頁面時，它就會待在完全相同的位置。
+		</p>
+		<p class="code">
+			h1 {<br />
+			&emsp;position: fixed;<br />
+			&emsp;top: 0px;<br />
+			&emsp;left: 50px;<br />
+			&emsp;padding: 10px;<br />
+			&emsp;width: 100%;<br />
+			&emsp;margin: 0px;<br />
+			}
+		</p>
+		<a href="position_fixed.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>重疊元素</h1>
+		<p class="describtion">
+			z-index屬性，這個數值越高，元素就會出現在越前方，z-index有時候被稱為「堆疊上下文(stacking context)」。
+		</p>
+		<p class="code">
+			h1 {<br />				
+			&emsp;background-color: #efefef;<br />
+			&emsp;padding: 10px;<br />
+			&emsp;position: fixed;<br />
+			&emsp;top: 0px;<br />
+			&emsp;left: 0px;<br />
+			&emsp;padding: 10px;<br />
+			&emsp;width: 100%;<br />
+			&emsp;margin: 0px;<br />
+			&emsp;z-index: -1;<br />
+			}<br />
+			p {<br />
+			&emsp;position: relative;<br />
+			&emsp;top: 70px;<br />
+			&emsp;left: 70px;<br />
+			&emsp;width: 750px;<br />
+			&emsp;margin-top: 100px;<br />
+			&emsp;z-index: 2;<br />
+			}
+		</p>
+		<a href="z_index.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>浮動元素</h1>
+		<p class="describtion">
+			float屬性，可以移走一個正常流向中的元素，將它放在容器元素的最左側或最右側，位在容器元素中的其他元素就會沿著浮動元素流動。<br />			
+		</p>
+		<p class="code">
+			blockquote {<br />
+			&emsp;float: right;<br />
+			&emsp;width: 275px;<br />
+			&emsp;font-size: 130%;<br />
+			&emsp;font-style: italic;<br />
+			&emsp;font-family: Georgia, Times, serif;<br />
+			&emsp;margin: 70px 0px 10px 10px;<br />
+			&emsp;padding: 10px;<br />
+			&emsp;border-top: 1px solid #665544;<br />
+			&emsp;border-bottom: 1px solid #665544;<br />
+			}
+		</p>
+		<a href="float.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>使用FLOAT將元素並排</h1>
+		<p class="describtion">
+			很多版面配置會將方框並排在一起，這通常是利用float屬性來達成的。<br />
+			當元素浮動時，方框的高度會影像後續元素的位置，當發生位置的問題時，比較常用clear屬性來解決。<br />
+		</p>
+		<p class="code">
+			p {<br />
+			&emsp;width: 230px;<br />
+			&emsp;float: left;<br />
+			&emsp;margin: 5px;<br />
+			&emsp;padding: 5px;<br />
+			&emsp;background-color: #efefef;<br />
+			}
+		</p>
+		<a href="using_float.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>淨空浮動元素</h1>
+		<p class="describtion">
+			clear屬性可以讓你表明沒有任何一個元素(同一個容器元素內)應該碰到方框的左側或右側。<br />
+			此屬性可以接受以下的值: <br />
+			<table>
+				<tr>
+					<th scope="col">屬性值</th>
+					<th scope="col">功能</th>
+				</tr>
+				<tr>
+					<td>left</td>
+					<td>方框的左側不能碰到出現在同一個容器元素內的任何其他元素。</td>
+				</tr>
+				<tr>
+					<td>right</td>
+					<td>方框的右側不能碰到出現在同一個容器元素內的任何其他元素。</td>
+				</tr>
+				<tr>
+					<td>both</td>
+					<td>方框的左側和右側都不能碰到出現在同一個容器元素內的任何其他元素。</td>
+				</tr>
+				<tr>
+					<td>none</td>
+					<td>元素可以碰到方框的任何一側。</td>
+				</tr>
+			</table>
+			下面的例子將換行過後的第一段，也就是設定class=&quot;clear&quot;的段落，加上了clear: left;，讓它的左側不能碰到其他元素，<br />
+			如此可以確保段落會做換行的動作。
+		</p>
+		<p class="code">
+			p {<br />
+			&emsp;width: 230px;<br />
+			&emsp;float: left;<br />
+			&emsp;margin: 5px;<br />
+			&emsp;padding: 5px;<br />
+			&emsp;background-color: #efefef;<br />
+			}
+		</p>
+		<a href="clear.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>浮動元素的父元素: 問題與解決方案</h1>
+		<p class="describtion">
+			如果一個容器元素只包含了浮動元素，有些瀏覽器會將它視為0像素高，造成顯示異常。<br />
+			這裡的例子中，div原本為1px的方框邊緣被交疊成2px的線條。<br />
+			解決方法為加入兩條CSS規則: overflow: auto; 以及 width: 100%;。
+		</p>
+		<p class="code">
+			div {<br />
+			&emsp;margin-top: 100px;<br />
+			&emsp;border: 1px solid #665544;<br />
+			&emsp;overflow: auto;<br />
+			&emsp;width: 100%;<br />
+			}
+		</p>
+		<a href="float_problem.html" target="_blank">問題DEMO</a>
+		<br />
+		<a href="float_solution.html" target="_blank">解決方案DEMO</a>
+		<hr />
+		<h1>使用浮動來製作多欄版面</h1>
+		<p class="describtion">
+			許多網頁在設計中使用了多欄版面。其作法是使用一個&lt;div&gt;來代表每一欄，並使用下列三個CSS屬性將這些直欄並排在一起：<br />
+			width(設定欄寬)、float(會將各欄並排在一起)、margin(會在欄與欄之間製造出間距)
+		</p>
+		<p class="code">
+			.col1of2 {<br />
+			&emsp;float: left;<br />
+			&emsp;width: 550px;<br />
+			&emsp;margin: 10px;<br />
+			}<br />
+			.col2of2 {<br />
+			&emsp;float: left;<br />
+			&emsp;width: 250px;<br />
+			&emsp;margin: 10px;<br />
+			}
+		</p>
+		<a href="column_two.html" target="_blank">兩欄DEMO</a>
+		<br />
+		<a href="column_three.html" target="_blank">三欄DEMO</a>
+		<hr />
+		<h1>固定寬度版面</h1>
+		<p class="describtion">
+			固定寬度版面不會隨著使用者縮放瀏覽器視窗而改變大小。單位大多是以像素為主。<br />
+			<table>
+				<tr>
+					<th>優點</th>
+					<th>缺點</th>
+				</tr>
+				<tr>
+					<td>在控制元素的尺寸和定位時，像素值是很精確的。</td>
+					<td>頁面邊緣會有大空白。</td>
+				</tr>
+				<tr>
+					<td>比起流動版面，設計師更能掌控頁面上的項目外觀和位置。</td>
+					<td>如果使用者的螢幕解析度比設計師的螢幕解析度大，頁面可能會看起來變小，文字會較難閱讀。</td>
+				</tr>
+				<tr>
+					<td>你可以控制文字行的長度，不管使用者的視窗大小為何。</td>
+					<td>如果使用者增加字體大小，文字可能放不進預定的空間。</td>
+				</tr>
+				<tr>
+					<td>影像的尺寸會和頁面保持一定的比例。</td>
+					<td>這樣的設計通常在解析度與桌上型或筆記型電腦相似的裝置上最佳。</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>比起流動版面，同樣內容的頁面會占用較多的垂直空間。</td>
+				</tr>
+			</table>
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;width: 960px;<br />
+			&emsp;margin: 0 auto;<br />
+			}<br />
+			#content {<br />
+			&emsp;overflow: auto;<br />
+			&emsp;height: 100%;<br />
+			}<br />
+			#nav, #feature, #footer {<br />
+			&emsp;background-color: #efefef;<br />
+			&emsp;padding: 10px;<br />
+			&emsp;margin: 10px;<br />
+			}<br />
+			.column1, .column2, .column3 {<br />
+			&emsp;background-color: #efefef;<br />
+			&emsp;width: 300px;<br />
+			&emsp;float: left;<br />
+			&emsp;margin: 10px;<br />
+			}<br />
+			li {<br />
+			&emsp;display: inline;<br />
+			&emsp;padding: 5px;<br />
+			}
+		</p>
+		<a href="fixed_width_layout.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>流動版面</h1>
+		<p class="describtion">
+			流動版面設計會隨著使用者縮放瀏覽器視窗而改變大小。單位大多以百分比為主。<br />
+			<table>
+				<tr>
+					<th>優點</th>
+					<th>缺點</th>
+				</tr>
+				<tr>
+					<td>頁面會延伸填滿整個瀏覽器視窗，所以在大螢幕上，頁面兩側不會有空白。</td>
+					<td>如果你不控制頁面各區的寬度，那麼設計可能會與你當初的設計大相逕庭，某些元素周圍會出現空白，或者項目會擠在一起。</td>
+				</tr>
+				<tr>
+					<td>如果使用者的視窗較小，頁面可以縮小來配合，使用者不需要向側面捲動。</td>
+					<td>如果使用者的螢幕是寬的，文字行可能會變得很長以致難以閱讀。</td>
+				</tr>
+				<tr>
+					<td>若使用者將字體大小設得比設計師原擬的大，設計也可以容納這樣的情況。</td>
+					<td>如果使用者的螢幕是窄的，文字可能會擠在一起，導致每一行只剩幾個字。</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>如果固定寬度項目(例如影像)所在的方框太小不足以容納(因為使用者將視窗拉得太小)，影像可能會溢到文字上。</td>
+				</tr>
+			</table>
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;width: 90%;<br />
+			&emsp;margin: 0 auto;<br />
+			}<br />
+			#content {<br />
+			&emsp;overflow: auto;<br />
+			}<br />
+			#nav, #feature, #footer {<br />
+			&emsp;margin: 1%;<br />
+			}<br />
+			.column1, .column2, .column3 {<br />
+			&emsp;width: 31.3%;<br />
+			&emsp;float: left;<br />
+			&emsp;margin: 1%;<br />
+			}<br />
+			.column3 {<br />
+			&emsp;margin-right: 0%;<br />
+			}<br />
+			li {<br />
+			&emsp;display: inline;<br />
+			&emsp;padding: 0.5em;<br />
+			}<br />
+			#nav, #footer {<br />
+			&emsp;background-color: #efefef;<br />
+			&emsp;padding: 0.5em 0;<br />
+			}<br />
+			#feature, .article {<br />
+			&emsp;height: 10em;<br />
+			&emsp;margin-bottom: 1em;<br />
+			&emsp;background-color: #efefef;<br />
+			}
+		</p>
+		<a href="liquid_layout.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>960像素格線</h1>
+		<p class="describtion">
+			格線可以在項目之間維持一致的比例和空間。有以下優點: <br />
+			在不同的頁面設計之間營造延續性、在各頁面上協助使用者預期到哪裡尋找資訊、<br />
+			網站加入新內容的時候可以顯得一致、幫助設計者以一致的方式合作。<br />
+			DEMO中是960像素寬的12欄格線，有12個相同大小的欄，每一欄都是60像素寬，每一欄的邊界都是10像素，這樣欄與欄之間就會保持20像素的間距，頁面的左右側則是10像素的間距。
+		</p>
+		<p class="code">
+		</p>
+		<a href="960pxGrid_layout.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>使用960.GS製作格線版面</h1>
+		<p class="describtion">
+			網路上可以找到不少格線框架，這裡介紹的是<a href="www.960.gs">960格線系統</a>，<br />
+			把它下載回電腦，解壓縮後960-Grid-System-master\code\css中有960_12_col.css可以直接套用。<br />
+			我們可以在html裡面連結套用這個css檔，然後在需要的地方加入定義好css的class名稱，例如加入以下class：<br />
+			class=&quot;container_12&quot;(作為整個頁面的容器，並表明我們要使用的是12欄的格線)<br />
+			class=&quot;clearfix&quot;(以確認瀏覽器知道容器方框的高度，因為它只包含了浮動元素，這裡會使用到clear屬性)<br />
+			class=&quot;grid_12&quot;(製作了一個12欄寬的區塊，一欄60px，12欄共720px；欄間距10px，所以欄與欄之間相距20px，12欄間共有11個20px，共220px；總共940px寬)<br />
+			class=&quot;grid_4&quot;(製作了一個4欄寬的區塊，也就是400px寬)
+		</p>
+		<p class="code">
+		</p>
+		<a href="grid_layout.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>數個樣式表</h1>
+		<p class="describtion">
+			有些網頁作者會將CSS樣式分成好幾個樣式表。舉例來說，可能一個樣式表來控制版面，另一個樣式表控制字型、顏色。<br />
+			有些作者會進一步使用模組化的方式來處理樣式表，也就是製作不同的樣式表來控制文字設計、版面、表單、表格，甚至網站上的每個次版塊。<br />
+			有兩個方式可以在頁面上加入數個樣式表：
+			<ol>
+				<li>HTML可以連到一個樣式表，然後該樣式表可以使用@import規則來匯入其他樣式表<br />(和所有樣式表一樣，如果有兩條規則都套用到同一個元素，那麼後者的規則就會凌駕前者。<br />使用@import那一刻起，瀏覽器才會認定規則生效，所以如果@import寫在css的最一開始，代表這個css檔中的其他規定會凌駕使用@import的規則)</li>
+				<li>在HTML中，你可以為每個樣式表使用一個獨立的&lt;link&gt;元素<br />(和所有樣式表一樣，如果有兩條規則都套用到同一個元素，那麼後者的規則就會凌駕前者)</li>
+			</ol>
+		</p>
+		<p class="code">
+		</p>
+		<a href="multiple_css_import.html" target="_blank">@import_DEMO</a>
+		<br />
+		<a href="multiple_css_link.html" target="_blank">link_DEMO</a>
+		<hr />
+	</body>
+</html>

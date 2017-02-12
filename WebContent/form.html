@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form</title>
+</head>
+<body>
+<a href="index.html">Return to Index</a>
+<h1>表單結構</h1>
+<p>
+	語法: <br />
+	method="get"時，表單的值會直接加到action所設定的URL尾端，用在短表單或是從伺服器取得資料(查詢)的時候；<br />
+	method="post"時，表單的值會由HTML標頭傳送，用在上傳資料、長表單、敏感資料、增刪資料庫的時候。<br />
+	若method沒有指定，會預設使用get<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot; method=&quot;get或post&quot; id=&quot;login&quot;&gt;<br />
+	&emsp;&lt;p&gt;傳給伺服器的內容&lt;/p&gt;<br />
+	&lt;/form&gt;
+</p>
+<form action="localhost/login.php" method="get" id="login">
+	<p>傳給伺服器的內容</p>
+</form>
+<hr />
+<h1>文字輸入</h1>
+<p>
+	語法:<br />
+	&lt;input&gt;元素中，type屬性的值為text的時候，它會製作單行的文字輸入欄位；<br />
+	name是伺服器用來識別表單值的；<br />
+	size應該改用CSS來控制，是個舊屬性，用來指定可見字元的寬度；<br />
+	maxlength是可輸入的字元數。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot; method=&quot;get或post&quot; id=&quot;login&quot;&gt;<br />
+	&emsp;&lt;p&gt;Username:<br />
+	&emsp;&lt;input type=&quot;text&quot; name=&quot;username&quot; size=&quot;15&quot; maxlength=&quot;30&quot; /&gt;<br />
+	&emsp;&lt;/p&gt;<br />
+	&lt;/form&gt;	
+</p>
+<form action="localhost/login.php" method="get" id="login">
+	<p>Username:
+	<input type="text" name="username" size="15" maxlength="30" />
+	</p>
+</form> 
+<hr />
+<h1>密碼輸入</h1>
+<p>
+	語法: &lt;input&gt;元素中，type屬性的值為password的時候，它會遮蔽輸入字元。**雖然遮蔽了字元，但是尚未經過加密!!請參考SSL。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Password:<br />
+	&emsp;&lt;input type=&quot;password&quot; name=&quot;password&quot; size=&quot;15&quot; maxlength=&quot;30&quot; /&gt;<br />
+	&emsp;&lt;/p&gt;<br />
+	&lt;/form&gt;	
+</p>
+<form action="localhost/login.php" method="get或post" id="login">
+	<p>Password:
+	<input type="password" name="password" size="15" maxlength="30" />
+	</p>
+</form>
+<hr />
+<h1>文字區塊</h1>
+<p>
+	語法: &lt;textarea&gt;中cols和rows屬性應以CSS取代；在開始和結束標記間的文字如果沒有刪除，會一併送到伺服器，有時網站會在使用者點按文字區塊時，透過JavaScript清除這些資訊。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Please write your comments:&lt;/p&gt;<br />
+	&emsp;&lt;textarea name=&quot;comments&quot; cols=&quot;20&quot; rows=&quot;4&quot;&gt;Enter your comments...&lt;/textarea&gt;<br />
+	&lt;/form&gt;	
+</p>
+<form action="localhost/login.php">
+	<p>Please write your comments:</p>
+	<textarea name="comments" cols="20" rows="4">Enter your comments...</textarea>
+</form>
+<hr />
+<h1>單選鈕</h1>
+<p>
+	語法: &lt;input&gt;元素中，type屬性的值為radio，同一個問題的name屬性值必須相同，而value則必須不同，checked在同一組單選鈕中只能有一個按鈕使用。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Please select your favorite fruit:&lt;br /&gt;<br />
+	&emsp;&emsp;&lt;input type=&quot;radio&quot; name=&quot;fruit&quot; value=&quot;apple&quot; /&gt; apple<br />
+	&emsp;&emsp;&lt;input type=&quot;radio&quot; name=&quot;fruit&quot; value=&quot;orange&quot; /&gt; orange<br />
+	&emsp;&emsp;&lt;input type=&quot;radio&quot; name=&quot;fruit&quot; value=&quot;lemon&quot; checked=&quot;checked&quot; /&gt; lemon<br />
+	&emsp;&lt;/p&gt;<br />
+	&lt;/form&gt;		
+</p>
+<form action="localhost/login.php">
+	<p>Please select your favorite fruit:<br />
+		<input type="radio" name="fruit" value="apple" /> apple
+		<input type="radio" name="fruit" value="orange" /> orange
+		<input type="radio" name="fruit" value="lemon" checked="checked" /> lemon
+	</p>
+</form> 
+<hr />
+<h1>勾選框</h1>
+<p>
+	語法: &lt;input&gt;元素中，type屬性的值為checkbox。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Please select your favorite ghibli(s):&lt;br /&gt;<br />
+	&emsp;&emsp;&lt;input type=&quot;checkbox&quot; name=&quot;ghibli&quot; value=&quot;totoro&quot; /&gt; 龍貓<br />
+	&emsp;&emsp;&lt;input type=&quot;checkbox&quot; name=&quot;ghibli&quot; value=&quot;naushika&quot; checked=&quot;checked&quot; /&gt; 風之谷<br />
+	&emsp;&emsp;&lt;input type=&quot;checkbox&quot; name=&quot;ghibli&quot; value=&quot;bonyo&quot; checked=&quot;checked&quot; /&gt; 崖上的波妞<br />
+	&emsp;&lt;/p&gt;<br />
+	&lt;/form&gt;		
+</p>
+<form action="localhost/login.php">
+	<p>Please select your favorite ghibli(s):<br />
+		<input type="checkbox" name="ghibli" value="totoro" /> 龍貓
+		<input type="checkbox" name="ghibli" value="naushika" checked="checked" /> 風之谷
+		<input type="checkbox" name="ghibli" value="bonyo" checked="checked" /> 崖上的波妞
+	</p>
+</form>
+<hr />
+<h1>下拉選單欄位</h1>
+<p>
+	語法: &lt;select&gt;又稱選取方框，裡面使用&lt;option&gt;來提供選項，選項中selected屬性為selected的會預先選好，若無設定selected則預設為第一個選項。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Please select your favorite ghibli:&lt;br /&gt;<br />
+	&emsp;&emsp;&lt;select name=&quot;devices&quot;&gt;<br />
+	&emsp;&emsp;&emsp;&lt;option value=&quot;totoro&quot;&gt;龍貓&lt;/option&gt;<br />
+	&emsp;&emsp;&emsp;&lt;option value=&quot;naushika&quot; selected=&quot;selected&quot;&gt;風之谷&lt;/option&gt;<br />
+	&emsp;&emsp;&emsp;&lt;option value=&quot;bonyo&quot; &gt;崖上的波妞&lt;/option&gt;<br />
+	&emsp;&emsp;&lt;/select&gt;<br />
+	&emsp;&lt;/p&gt;<br />
+	&lt;/form&gt;
+</p>
+<form action="localhost/login.php">
+	<p>Please select your favorite ghibli:<br />
+		<select name="devices">
+			<option value="totoro">龍貓</option>
+			<option value="naushika">風之谷</option>
+			<option value="bonyo" >崖上的波妞</option>
+		</select>
+	</p>
+</form>
+<hr />
+<h1>多重選擇區塊</h1>
+<p>
+	語法: &lt;select&gt;中加入size屬性，可以將下拉選單變成一個區塊，一次顯示多個選項；加入multiple="multiple"可以讓使用者選擇多重選項(PC上要按住Ctrl鍵以選擇多重選項)。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Please select your favorite ghibli:&lt;br /&gt;<br />
+	&emsp;&emsp;&lt;select name=&quot;devices&quot; size=&quot;3&quot; multiple=&quot;multiple&quot;&gt;<br />
+	&emsp;&emsp;&emsp;&lt;option value=&quot;totoro&quot;&gt;龍貓&lt;/option&gt;<br />
+	&emsp;&emsp;&emsp;&lt;option value=&quot;naushika&quot; selected=&quot;selected&quot;&gt;風之谷&lt;/option&gt;<br />
+	&emsp;&emsp;&emsp;&lt;option value=&quot;bonyo&quot; &gt;崖上的波妞&lt;/option&gt;<br />
+	&emsp;&emsp;&lt;/select&gt;<br />
+	&emsp;&lt;/p&gt;<br />
+	&lt;/form&gt;
+</p>
+<form action="localhost/login.php">
+	<p>Please select your favorite ghibli:<br />
+		<select name="devices" size="3" multiple="multiple">
+			<option value="totoro">龍貓</option>
+      		<option value="naushika" selected="selected">風之谷</option>
+			<option value="bonyo" >崖上的波妞</option>
+		</select>
+	</p>
+</form>
+<hr />
+<h1>檔案輸入區塊</h1>
+<p>
+	語法: &lt;input&gt;中使用屬性type=&quot;file&quot;，而在&lt;form&gt;中的method屬性必須設定為post。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot; method=&quot;post&quot;&gt;<br />
+	&emsp;&lt;p&gt;Upload your photo:&lt;/p&gt;<br />
+	&emsp;&lt;input type=&quot;file&quot; name=&quot;user_photo&quot; /&gt;&lt;br /&gt;<br />
+	&emsp;&lt;input type=&quot;submit&quot; value=&quot;Upload&quot; /&gt;<br />
+	&lt;/form&gt;		
+</p>
+<form action="localhost/login.php" method="post">
+	<p>Upload your photo:</p>
+	<input type="file" name="user_photo" /><br />
+	<input type="submit" value="Upload" />
+</form> 
+<hr />
+<h1>送出按鈕</h1>
+<p>
+	語法: &lt;input&gt;中使用屬性type=&quot;submit&quot;；可以使用name屬性，但不一定要使用；value屬性是按鈕上會顯示的文字。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Subscribe to our email list:&lt;/p&gt;<br />
+	&emsp;&lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;<br />
+	&emsp;&lt;input type=&quot;submit&quot; name=&quot;subscribe&quot; value=&quot;Subscribe&quot; /&gt;<br />
+	&lt;/form&gt;		
+</p>
+<form action="localhost/login.php">
+	<p>Subscribe to our email list:</p>
+	<input type="text" name="email" />
+	<input type="submit" name="subscribe" value="Subscribe" />
+</form> 
+<hr />
+<h1>影像按鈕</h1>
+<p>
+	語法: &lt;input&gt;中使用type=&quot;image&quot;，src、width、height屬性和它們在&lt;img&gt;中是一樣的。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;p&gt;Subscribe to our email list:&lt;/p&gt;<br />
+	&emsp;&lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;<br />
+	&emsp;&lt;input type=&quot;image&quot; src=&quot;images/wallpaper-1806999.jpg&quot; width=&quot;100&quot; height=&quot;20&quot;/&gt;<br />
+	&lt;/form&gt;		
+</p>
+<form action="localhost/login.php">
+	<p>Subscribe to our email list:</p>
+	<input type="text" name="email" />
+	<input type="image" src="images/wallpaper-1806999.jpg" width="100" height="20"/>
+</form> 
+<hr />
+<h1>按鈕和隱藏控制項</h1>
+<p>
+	語法: &lt;button&gt;，可以在開始和結束標記間，結合文字和影像。&lt;input&gt;中type=&quot;hidden&quot;，讓網頁作者在表單中加入使用者看不到的值。<br /><br />
+	&lt;form action=&quot;localhost/login.php&quot;&gt;<br />
+	&emsp;&lt;button&gt;&lt;img src=&quot;images/wallpaper-1806999.jpg&quot; alt=&quot;add&quot; width=&quot;10&quot; height=&quot;10&quot;/&gt; Add&lt;/button&gt;<br />
+	&emsp;&lt;input type=&quot;hidden&quot; name=&quot;bookmark&quot; value=&quot;lyrics&quot;/&gt;<br />
+	&lt;/form&gt;
+</p>
+<form action="localhost/login.php">
+	<button><img src="images/wallpaper-1806999.jpg" alt="add" width="10" height="10"/> Add</button>
+	<input type="hidden" name="bookmark" value="lyrics"/>
+</form> 
+<hr />
+<h1>為表單控制項貼標籤</h1>
+<p>
+	語法: <br />
+	&lt;label&gt;，目的是用來標註表單的用途目的，如此一來視障人士才能夠使用表單。有兩種用法:<br /><br />
+	1. 將文字敘述和表單輸入欄位包圍起來。<br />
+	&emsp;&lt;label&gt;Age: &lt;input type=&quot;text&quot; name=&quot;age&quot; /&gt;&lt;/label&gt;<br /><br />
+</p>
+<label>Age: <input type="text" name="age" /></label>
+<p>
+	2. 獨立於表單之外，使用for屬性來表示它要代表的是哪一個表單控制項。<br />
+	&emsp;Gender:<br />
+	&emsp;&lt;input id=&quot;female&quot; type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;f&quot;&gt;<br />
+	&emsp;&lt;label for=&quot;female&quot;&gt;Female&lt;/label&gt;<br />
+	&emsp;&lt;input id=&quot;male&quot; type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;m&quot;&gt;<br />
+	&emsp;&lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;<br />
+</p>
+Gender:
+<input id="female" type="radio" name="gender" value="f">
+<label for="female">Female</label>
+<input id="male" type="radio" name="gender" value="m">
+<label for="male">Male</label>
+<hr />
+<h1>將表單元素群組起來</h1>
+<p>
+	語法: <br />
+	&lt;fieldset&gt;，將相關的表單控制項群組在這個元素裡，大部分瀏覽器會在fieldset的邊緣四周框出一道線。<br />
+	&lt;legend&gt;元素可以直接放在&lt;fieldset&gt;開始標記之後，它包含一個標題來協助標明整組表單控制項的用途。<br /><br />
+	&lt;fieldset&gt;<br />
+	&emsp;&lt;legend&gt;Contact details&lt;/legend&gt;<br />
+	&emsp;&lt;label&gt;Email:&lt;br /&gt;<br />
+	&emsp;&lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;&lt;/label&gt;&lt;br /&gt;<br />
+	&emsp;&lt;label&gt;Mobile:&lt;br /&gt;<br />
+	&emsp;&lt;input type=&quot;text&quot; name=&quot;mobile&quot; /&gt;&lt;/label&gt;&lt;br /&gt;<br />
+	&emsp;&lt;label&gt;Telephone:&lt;br /&gt;<br />
+	&emsp;&lt;input type=&quot;text&quot; name=&quot;telephone&quot; /&gt;&lt;/label&gt;<br />
+	&lt;/fieldset&gt;
+</p>
+<fieldset>
+	<legend>Contact details</legend>
+	<label>Email:<br />
+	<input type="text" name="email" /></label><br />
+	<label>Mobile:<br />
+	<input type="text" name="mobile" /></label><br />
+	<label>Telephone:<br />
+	<input type="text" name="telephone" /></label>
+</fieldset> 
+<h1>HTML5:表單驗證</h1>
+<p>
+	表單驗證(form validation)，在過去是透過JavaScript來進行表單驗證的，不過HTML5推出了驗證功能，將此工作改交給瀏覽器做，資料可以在傳至伺服器之前就經瀏覽器驗證內容，使用者得到更快的回應，也減輕了伺服器的工作量。<br />
+	表單驗證的範例之一就是&lt;required&gt;屬性，意思是該表單元素是應該填入資料的，在HTML5中這個屬性不需要值，然而在HTML4裡所有屬性都需要一個值，所以有些人會將此屬性的值預設為required。<br /><br />
+	&lt;input type=&quot;text&quot; name=&quot;username&quot; required=&quot;required&quot; /&gt;
+</p>
+<form action="localhost/login.php" method="post">
+	<label for="username">Username:</label>
+	<input type="text" name="username" required="required" /><br />
+	<label for="password">Password:</label>
+	<input type="password" name="password" required="required" />
+	<input type="submit" value="Submit" />
+</form>
+<hr />
+<h1>HTML5:日期輸入</h1>
+<p>
+	語法: &lt;input type=&quot;date&quot; name=&quot;depart&quot; /&gt;，如果就瀏覽器沒有辦法辨識，會將這些輸入框當作單行文字框。
+</p>
+<form action="localhost/login.php" method="post">
+	<label for="username">Departure date:</label>
+	<input type="date" name="depart" />
+	<input type="submit" value="Submit" />
+</form>
+<hr />
+<h1>HTML5:EMAIL和URL輸入</h1>
+<p>
+	語法: 支援HTML5的瀏覽器會檢查是否使用了正確的輸入格式，無支援的瀏覽器會當作一般文字框。<br /><br />
+	EMAIL輸入: &lt;input type=&quot;email&quot; name=&quot;email&quot; /&gt;<br />
+</p>
+<form action="localhost/login.php" method="post">
+	<p>Please enter your email address:</p>
+	<input type="email" name="email" />
+	<input type="submit" value="Submit" />
+</form>
+<p>
+	URL輸入: &lt;input type=&quot;url&quot; name=&quot;website&quot; /&gt;<br />
+</p>
+<form action="localhost/login.php" method="post">
+	<p>Please enter your website address:</p>
+	<input type="url" name="website" />
+	<input type="submit" value="Submit" />
+</form>
+<hr />
+<h1>HTML5:搜尋輸入</h1>
+<p>
+	語法: &lt;input type=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Enter keyword&quot; /&gt;
+</p>
+<form action="localhost/login.php" method="post">
+	<p>Search:</p>
+	<input type="search" name="search" placeholder="Enter keyword" />
+	<input type="submit" value="Search" />
+</form>
+<hr />
+</body>
+</html>

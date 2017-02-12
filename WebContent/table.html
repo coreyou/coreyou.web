@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table</title>
+</head>
+<body>
+<a href="index.html">Return to Index</a>
+<h1>基本表格結構:</h1>
+<p>
+	table tag中有table row，table row中定義該列的每欄資料table data。<br /><br />
+	&lt;table&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;td&gt;table_data_1&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;table_data_2&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&lt;/table&gt;
+</p>
+<table>
+	<tr>
+		<td>00</td>
+		<td>10</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>01</td>
+		<td>11</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>02</td>
+		<td>12</td>
+		<td>22</td>
+	</tr>
+</table>
+<hr />
+<h1>表格標題:</h1>
+<p>
+	語法: &lt;th scope=&quot;col或row&quot;&gt;用法跟td一樣&lt;/th&gt; th(table heading)<br /><br />
+	&lt;table&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th scope=&quot;col&quot;&gt;Saturday&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;th scope=&quot;col&quot;&gt;Sunday&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th scope=&quot;row&quot;&gt;Tickets sold:&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td&gt;table_data_1&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;table_data_2&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th scope=&quot;row&quot;&gt;Total sales:&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td&gt;table_data_1&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;table_data_2&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&lt;/table&gt;
+</p>
+<table>
+	<tr>
+		<th></th>
+		<th scope="col">Saturday</th>
+		<th scope="col">Sunday</th>
+	</tr>
+	<tr>
+		<th scope="row">Tickets sold:</th>
+		<td>120</td>
+		<td>135</td>
+	</tr>
+	<tr>
+		<th scope="row">Total sales:</th>
+		<td>$600</td>
+		<td>$675</td>
+	</tr>
+</table>
+<hr />
+<h1>跨欄</h1>
+<p>
+	語法: &lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;<br /><br />
+	&lt;table&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;9am&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;10am&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;11am&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;12am&lt;/th&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;Monday&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td colspan=&quot;2&quot;&gt;Geography&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;Math&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;Art&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;Tuesday&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td colspan=&quot;3&quot;&gt;Gym&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;Home Ec&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&lt;/table&gt;
+</p>
+<table>
+	<tr>
+		<th></th>
+		<th>9am</th>
+		<th>10am</th>
+		<th>11am</th>
+		<th>12am</th>
+	</tr>
+	<tr>
+		<th>Monday</th>
+		<td colspan="2">Geography</td>
+		<td>Math</td>
+		<td>Art</td>
+	</tr>
+	<tr>
+		<th>Tuesday</th>
+		<td colspan="3">Gym</td>
+		<td>Home Ec</td>
+	</tr>
+</table>
+<hr />
+<h1>跨列</h1>
+<p>
+	語法: &lt;td rowspan=&quot;2&quot;&gt;&lt;/td&gt;<br /><br />
+	&lt;table&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;ABC&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;BBC&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;CNN&lt;/th&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;6pm - 7pm&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td rowspan=&quot;2&quot;&gt;Movie&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;Comedy&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;News&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;7pm - 8pm&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td&gt;Sport&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;Current Affairs&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&lt;/table&gt;
+</p>
+<table>
+	<tr>
+		<th></th>
+		<th>ABC</th>
+		<th>BBC</th>
+		<th>CNN</th>
+	</tr>
+	<tr>
+		<th>6pm - 7pm</th>
+		<td rowspan="2">Movie</td>
+		<td>Comedy</td>
+		<td>News</td>
+	</tr>
+	<tr>
+		<th>7pm - 8pm</th>
+		<td>Sport</td>
+		<td>Current Affairs</td>
+	</tr>
+</table>
+<hr />
+<h1>長表格</h1>
+<p>
+	語法: &lt;thead&gt;標題列&lt;/thead&gt; &lt;tbody&gt;內容列&lt;/tbody&gt; &lt;tfoot&gt;註腳列&lt;/tfoot&gt;
+	使用長表格的原因是，如果表格內容使高度超過螢幕，那麼瀏覽器會將標題和註腳保留不動，只捲動內容。
+</p>
+<table>
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Income</th>
+			<th>Expenditure</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>1st January</th>
+			<td>250</td>
+			<td>36</td>
+		</tr>
+		<tr>
+			<th>2nd January</th>
+			<td>285</td>
+			<td>48</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td></td>
+			<td>129</td>
+			<td>64</td>
+		</tr>
+	</tfoot>	
+</table>
+<hr />
+<h1>舊原始碼:寬度和間距</h1>
+<p>
+	語法:<br />
+	&lt;table width=&quot;400&quot; cellpadding=&quot;單元格邊距&quot; cellspacing=&quot;單元格間距&quot;&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th width=&quot;150&quot;&gt;&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;Withdrawn&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;th&gt;Credit&lt;/th&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&emsp;&lt;tr&gt;<br />
+	&emsp;&emsp;&lt;th&gt;January&lt;/th&gt;<br />
+	&emsp;&emsp;&lt;td&gt;250.00&lt;/td&gt;<br />
+	&emsp;&emsp;&lt;td&gt;660.50&lt;/td&gt;<br />
+	&emsp;&lt;/tr&gt;<br />
+	&lt;/table&gt;
+</p>
+<table width="400" cellpadding="10" cellspacing="5">
+	<tr>
+		<th width="150"></th>
+		<th>Withdrawn</th>
+		<th>Credit</th>
+	</tr>
+	<tr>
+		<th>January</th>
+		<td>250.00</td>
+		<td>660.50</td>
+	</tr>
+</table>
+<hr />
+<h1>舊原始碼:邊框和背景</h1>
+<p>
+	語法: 在table或td標籤中加入border=&quot;2&quot;和bgcolor=&quot;#efefef&quot;
+</p>
+<table border="2" bgcolor="#efefef">
+	<tr>
+		<th width="150"></th>
+		<th>Withdrawn</th>
+		<th bgcolor="#cccccc">Credit</th>
+	</tr>
+	<tr>
+		<th>January</th>
+		<td>250.00</td>
+		<td bgcolor="#cccccc">660.50</td>
+	</tr>
+</table>
+</body>
+</html>

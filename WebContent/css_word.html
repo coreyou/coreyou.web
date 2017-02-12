@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Word</title>
+</head>
+<body>
+	<a href="index.html">Return to Index</a>
+	<h1>指定字型</h1>
+	<p class="describtion">
+		font-family屬性，可以指定一連串字型，之間用逗號分開，如果使用者未安裝你首選的字型，瀏覽器會嘗試從清單中找到一個替代字型。<br />
+		如果字型名稱裡有兩個字，那就應該將它放在雙引號中。<br /><br />
+		可以寫在font-family屬性內的字體專有名詞:<br />
+		serif(櫬線): Georgia, Times, Times New Roman<br />
+		sans-serif(無襯線): Arial, Verdana, Helvetica<br />
+		monospace(等寬): Courier, Courier New<br />
+		曲線字: Comic Sans MS, Monotype Corsiva<br />
+		狂想: Impact, Haettenschweiler
+	</p>
+	<p class="code">
+		body {<br />
+		&emsp;font-family: Georgia, Times, serif;<br />
+		}<br />
+		h1, h2 {<br />
+		&emsp;font-family: Arial, Verdana, sans-serif;<br />
+		}<br />
+		.credits {<br />
+		&emsp;font-family: "Courier New", Courier, monospace;<br />
+		}<br />
+	</p>
+	<a href="font_family.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>字體大小</h1>
+	<p class="describtion">
+		font-size屬性，可以使用以下三種方式來指定字體大小:<br />
+		1. 像素，例如:12px。<br />
+		2. 百分比，瀏覽器預設文字大小是16px，所以75%等於12px，200%等於32px。如果你將&lt;body&gt;元素裡的所有文字都設成75%(12px)，然後又指派&lt;body&gt;元素裡的某個元素內容設為75%，則該元素會變成9px。<br />
+		3. EM，一個em等於m字母的寬度。<br /><br />
+		像素大約等於pt，因為1pt等於1/72吋，而大部分的電腦解析度為72ppi。
+	</p>
+	<table>
+	<tr>
+		<th></th>
+		<th scope="col">像素</th>
+		<th scope="col">百分比</th>
+		<th scope="col">EMS</th>
+	</tr>
+	<tr>
+		<th scope="row">12像素級數表</th>
+		<td>h1&emsp;24px<br />h2&emsp;18px<br />h3&emsp;14px<br />body&emsp;12px</td>
+		<td>h1&emsp;200%<br />h2&emsp;150%<br />h3&emsp;117%<br />body&emsp;75%</td>
+		<td>h1&emsp;1.5em<br />h2&emsp;1.3em<br />h3&emsp;1.17em<br />body&emsp;100%<br />p&emsp;0.75em</td>
+	</tr>
+	<tr>
+		<th scope="row">16像素級數表</th>
+		<td>h1&emsp;32px<br />h2&emsp;24px<br />h3&emsp;18px<br />body&emsp;16px</td>
+		<td>h1&emsp;200%<br />h2&emsp;150%<br />h3&emsp;133%<br />body&emsp;100%</td>
+		<td>h1&emsp;2em<br />h2&emsp;1.5em<br />h3&emsp;1.125em<br />body&emsp;100%<br />p&emsp;1em</td>
+	</tr>
+	</table>
+	<p class="code">
+		body {<br />
+		&emsp;font-family: Arial, Verdana, sans-serif;<br />
+		&emsp;font-size: 12px;<br />
+		}<br />
+		h1 {<br />
+		&emsp;font-size: 200%;<br />
+		}<br />
+		h2 {<br />
+		&emsp;font-size: 1.3em;<br />
+		}<br />
+	</p>
+	<a href="font_size.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>更多字型選擇與字型格式</h1>
+	<p class="describtion">
+		@font-face可以連結到某個字型檔的路徑，設定一個使用者電腦中沒有的字型，如果使用者的電腦沒有該字型，就會進行下載。<br />
+		其中需要以ont-family設定其字型名、src設定字型檔路徑、format設定字型格式。<br />
+		不同的瀏覽器支援不同的字型格式，字型格式應該以EOT、WOFF、TTF/OTF、SVG的順序出現在原始碼中。<br />
+		<a href="http://www.fontsquirrel.com/fontface/generator">字型轉檔的網站</a> Font Squirrel也會提供@font-face的CSS code，可以直接複製到程式碼內。 
+	</p>
+	<p class="code">
+		@font-face {<br />
+		&emsp;font-family: &lsquo;pacificoregular&rsquo;<br />
+    	&emsp;src: url(&lsquo;fonts/pacifico_web/pacifico-webfont.eot&rsquo;);<br />
+    	&emsp;src: url(&lsquo;fonts/pacifico_web/pacifico-webfont.eot?#iefix&rsquo;) format(&lsquo;embedded-opentype&rsquo;),<br />
+		&emsp;&emsp;url(&lsquo;fonts/pacifico_web/pacifico-webfont.woff&rsquo;) format(&lsquo;woff&rsquo;),<br />
+        &emsp;&emsp;url(&lsquo;fonts/pacifico_web/pacifico-webfont.ttf&rsquo;) format(&lsquo;truetype&rsquo;),<br />
+        &emsp;&emsp;url(&lsquo;fonts/pacifico_web/pacifico-webfont.svg#pacificoregular&rsquo;) format(&lsquo;svg&rsquo;);<br />
+    	&emsp;font-weight: normal;<br />
+    	&emsp;font-style: normal;<br />
+		}<br />
+		h1, h2 {<br />
+		&emsp;font-family: pacificoregular;<br />
+		}<br />
+	</p>
+	<a href="font_face.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>粗體和斜體</h1>
+	<p class="describtion">
+		font-weight: normal(正常粗細)、bold(粗體)<br />
+		font-style: normal(正常樣式)、italic(斜體)、oblique(傾斜體)
+	</p>
+	<p class="code">
+		h1 {<br />
+		&emsp;font-weight: bold;<br />
+		}<br />
+		h2 {<br />
+		&emsp;font-style: italic;<br />
+		}<br />
+		p {<br />
+		&emsp;font-style: oblique;<br />
+		}<br />
+	</p>
+	<a href="font_weight_style.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>大寫和小寫</h1>
+	<p class="describtion">
+		text-transform: uppercase(大寫)、lowercase(小寫)、capitalize(每個字的第一個字母變大寫)
+	</p>
+	<p class="code">
+		h1 {<br />
+		&emsp;text-transform: uppercase;<br />
+		}<br />
+		h2 {<br />
+		&emsp;text-transform: lowercase;<br />
+		}<br />
+		p {<br />
+		&emsp;text-transform: capitalize;<br />
+		}<br />
+	</p>
+	<a href="text_transform.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>底線和刪除線</h1>
+	<p class="describtion">
+		text-decoration: none(移除套用到文字上的任何裝飾，常用來移除鏈結文字的底線)、underline(底線)、overline(文字上方加線)、line-through(文字中央的刪節線)、blink(動態閃爍)
+	</p>
+	<p class="code">
+		h1 {<br />
+		&emsp;text-decoration: underline;<br />
+		}<br />
+		h2 {<br />
+		&emsp;text-decoration: overline;<br />
+		}<br />
+		.one {<br />
+		&emsp;text-decoration: line-through;<br />
+		}<br />
+		.two {<br />
+		&emsp;text-decoration: blink;<br />
+		}<br />
+		a {<br />
+		&emsp;text-decoration: none;<br />
+		}<br />
+	</p>
+	<a href="text_decoration.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>行距</h1>
+	<p class="describtion">
+		line-height: 1.4em;(最好用em作單位，這樣就會依據使用者所選擇的字體大小而相對調整)
+	</p>
+	<p class="code">
+		p {<br />
+		&emsp;line-height: 1.4em;<br />
+		}
+	</p>
+	<a href="line_height.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>字母與字的間距</h1>
+	<p class="describtion">
+		letter-spacing: 0.2em;(每個字母之間的距離，應該用em作單位，這樣就會被加到字型指定的預設值之上)<br />
+		word-spacing: 1em;(字與字之間的間距)
+	</p>
+	<p class="code">
+		h1 {<br />
+		&emsp;text-transform: uppercase;<br />
+		&emsp;letter-spacing: 0.2em;<br />
+		}<br />
+		p {<br />
+		&emsp;font-weight: bold;<br />
+		&emsp;text-transform: capitalize;<br />
+		&emsp;word-spacing: 1em;<br />
+		}<br />
+	</p>
+	<a href="letter_and_word_spacing.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>對齊</h1>
+	<p class="describtion">
+		text-align: left、right、center、justify(除了最後一行之外，每一行都應該佔據容器方框的整個寬度);<br />
+	</p>
+	<p class="code">
+		h1 {<br />
+		&emsp;text-transform: uppercase;<br />
+		&emsp;text-align: left;<br />
+		}<br />
+		h2 {<br />
+		&emsp;text-transform: lowercase;<br />
+		&emsp;text-align: right;<br />
+		}<br />
+		.two {<br />
+		&emsp;text-align: center;<br />
+		}<br />
+		.three {<br />
+		&emsp;text-align: justify;<br />
+		}<br />
+	</p>
+	<a href="text-align.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>垂直對齊</h1>
+	<p class="describtion">
+		vertical-align: baseline、sub、super、top、text-top、middle、bottom、text-bottom、長度(像素或em為單位，或者行高的百分比);<br />
+		此屬性比較常用在行內元素上，例如:&lt;img&gt;、&lt;em&gt;、&lt;strong&gt;等。
+	</p>
+	<p class="code">
+		#text-top {<br />
+		&emsp;vertical-align: text-top;<br />
+		}<br />
+		#baseline {<br />
+		&emsp;vertical-align: baseline;<br />
+		}<br />
+		#text-bottom {<br />
+		&emsp;vertical-align: text-bottom;<br />
+		}<br />
+	</p>
+	<a href="vertical_align.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>文字縮排</h1>
+	<p class="describtion">
+		text-indent: -9999px;(通常是以像素、em為單位，也可以接受一個負數值來推到視窗外)
+	</p>
+	<p class="code">
+		p {<br />
+		&emsp;text-indent: 20px;<br />
+		}
+	</p>
+	<a href="text_indent.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>CSS3: 陰影</h1>
+	<p class="describtion">
+		text-shadow: 1px 1px 0px #000000;<br />
+		屬性的值為三個長度、一個顏色。第一個長度為左右位移值；第二個長度為上下位移值；第三個為陰影的模糊量，是選擇性的；第四個為陰影的顏色。
+	</p>
+	<p class="code">
+		p.two {<br />
+		&emsp;background-color: #eeeeee;<br />
+		&emsp;color: #666666;<br />
+		&emsp;text-shadow: 1px 1px 0px #000000;<br />
+		}
+	</p>
+	<a href="text_shadow.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>第一個字母或第一行</h1>
+	<p class="describtion">
+		:first-letter 和 :first-line<br />
+		以上並非屬性，而稱為「擬元素(pseudo-elements)」，擬元素要放在選取器的結尾。
+	</p>
+	<p class="code">
+		p.intro:first-letter {<br />
+		&emsp;font-size: 200%;<br />
+		}<br />
+		p.intro:first-line {<br />
+		&emsp;font-weight: bold;<br />
+		}
+	</p>
+	<a href="first_letter_and_line.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>連結的樣式化</h1>
+	<p class="describtion">
+		CSS中有兩個擬類別可以設定已造訪和未造訪連結的不同樣式。<br />
+		:link 可以設定未造訪連結的樣式。<br />
+		:visited 可以設定已被點按之連結的樣式。<br />
+	</p>
+	<p class="code">
+		a:link {<br />
+		&emsp;color: deeppink;<br />
+		&emsp;text-decoration: none;<br />
+		}<br />
+		a:visited {<br />
+		&emsp;color: black;<br />
+		}<br />
+	</p>
+	<a href="link_visited.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>對使用者的回應</h1>
+	<p class="describtion">
+		CSS中有三個擬類別可以在使用者與元素互動時，改變這些元素的外觀。<br />
+		:hover 使用者將滑鼠移到連結或按鈕等元素上面時。<br />
+		:visited 當按鈕或連結等元素被點按時。<br />
+		:focus 當游標位於表單欄位等元素時。<br /><br />
+		在使用擬元素時，應該以下列順序出現：:link、:visited、:hover、:focus、:active。
+	</p>
+	<p class="code">
+		input {<br />
+		&emsp;padding: 6px 12px 6px 12px;<br />
+		&emsp;border: 1px solid #665544;<br />
+		&emsp;color: #ffffff;<br />
+		}<br />
+		&emsp;input.submit:hover {<br />
+		&emsp;background-color: #665544;<br />
+		}<br />
+		input.submit:active {<br />
+		&emsp;background-color: chocolate;<br />
+		}<br />
+		input.text {<br />
+		&emsp;color: #cccccc;<br />
+		}<br />
+		input.text:focus {<br />
+		&emsp;color: #665544;<br />
+		}<br />	
+	</p>
+	<a href="hover_active_focus.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>屬性選取器</h1>
+	<p class="describtion">
+		<table>
+			<tr>
+    			<td>選取器</td>
+    			<td>意義</td>
+    			<td>範例</td>
+  			</tr>
+  			<tr>
+    			<td>EXISTENCE</td>
+    			<td>
+    				[]<br />
+    				找出一個特定屬性(不管值為何)
+    			</td>
+    			<td>
+    				p[class]<br />
+    				找出任何帶有class屬性的&lt;p&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>EQUALITY</td>
+    			<td>
+    				[=]<br />
+    				找出一個有特定值的特定屬性
+    			</td>
+    			<td>
+    				p[class=&quot;dog&quot;]<br />
+    				找出class屬性值為dog的任何&lt;p&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>SPACE</td>
+    			<td>
+    				[~=]<br />
+    				找出一個特定屬性，其值出現在一串用空格分開的字詞當中
+    			</td>
+    			<td>
+    				p[class~=&quot;dog&quot;]<br />
+    				找出class屬性值是一串空白隔開的字詞清單，而且其中一個字是dog的任何&lt;p&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>PREFIX</td>
+    			<td>
+    				[^=]<br />
+    				找出一個特定屬性，其值的開頭為某一特定字串
+    			</td>
+    			<td>
+    				p[attr^&quot;d&quot;]<br />
+    				找出class屬性值是以字母d為開頭的任何&lt;p&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>SUBSTRING</td>
+    			<td>
+    				[*=]<br />
+    				找出一個特定屬性，其值包含了一個特定子字串
+    			</td>
+    			<td>
+    				p[attr*&quot;do&quot;]<br />
+    				找出class屬性值中包含了do這個字詞的任何&lt;p&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>SUFFIX</td>
+    			<td>
+    				[$=]<br />
+    				找出一個特定屬性，其值的結尾為某一特定字串
+    			</td>
+    			<td>
+    				p[attr$&quot;g&quot;]<br />
+    				找出class屬性值是以字母g為結尾的任何&lt;p&gt;元素
+    			</td>
+  			</tr>
+  		</table>
+	</p>
+	<hr />
+</body>
+</html>

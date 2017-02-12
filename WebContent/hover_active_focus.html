@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hover Active Focus</title>
+		<style type="text/css">
+			input {
+				padding: 6px 12px 6px 12px;
+				border: 1px solid #665544;
+				color: #ffffff;
+			}
+			input.submit:hover {
+				background-color: #665544;
+			}
+			input.submit:active {
+				background-color: chocolate;
+			}
+			input.text {
+				color: #cccccc;
+			}
+			input.text:focus {
+				color: #665544;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="localhost/login.php">
+ 			<p>Subscribe to our email list:</p>
+ 			<input class="text" type="text" name="email" />
+ 			<input class="submit" type="submit" name="subscribe" value="Subscribe" />
+		</form> 
+	</body>
+</html>

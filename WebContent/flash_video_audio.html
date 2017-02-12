@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Flash, Video, Audio</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+		<script type="text/javascript">swfobject.embedSWF("flash/over.swf", "over", "400", "300", "8.0.0");</script>
+		<script type="text/javascript">
+			var flashvars = {};
+			var params = {movie:"../ground control.flv"};
+			swfobject.embedSWF("flash/OSFlvPlayer_v4.2/OSplayer.swf", "groundControl", "400", "320", "8.0.0", flashvars, params);
+		</script>
+		<script type="text/javascript">
+			var flashvars = {};
+			var params = {mp3:"../audio/Sleep Away.mp3"};
+			swfobject.embedSWF("flash/player_mp3_maxi.swf", "demoMusic", "200", "20", "8.0.0", flashvars, params);
+		</script>
+	</head>
+<body>
+	<a href="index.html">Return to Index</a>
+	<h1>將FLASH影片加到網頁上</h1>
+	<p>
+		從Google免費取得SWFObject的程式碼，使用了&lt;div&gt;元素來製作一個Flash影片的空間，id屬性被SWFObject程式碼使用，在head有兩個&lt;script&gt;元素，<br />
+		第一個&lt;script&gt;中，type屬性表示裡面的程式碼是以JavaScript寫成的，src屬性告訴瀏覽器到哪裡尋找這份程式碼；<br />
+		第二個&lt;script&gt;是用來告訴瀏覽器關於此Flash的資訊，embedSWF()中的五個參數，分別是:<br />
+		1.swf檔的位置。<br />2.Flash影片應該取代的元素，透過&lt;div&gt;元素的id屬性來辨識。<br />3.Flash影片的寬度。<br />4.Flash影片的長度。<br />5.觀看此影片需要的最低版本Flash播放器: Flash Play 8。
+	</p>
+	<p>
+		語法: <br /><br />
+		&lt;!DOCTYPE html&gt;<br />
+		&lt;html&gt;<br />
+		&emsp;&lt;head&gt;<br />
+		&emsp;&emsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+		&emsp;&emsp;&lt;title&gt;Flash, Video, Audio&lt;/title&gt;<br />
+		&emsp;&emsp;&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js&quot;&gt;&lt;/script&gt;<br />
+		&emsp;&emsp;&lt;script type=&quot;text/javascript&quot;&gt;swfobject.embedSWF(&quot;flash/over.swf&quot;, &quot;over&quot;, &quot;400&quot;, &quot;300&quot;, &quot;8.0.0&quot;);&lt;/script&gt;<br />
+		&emsp;&lt;/head&gt;<br />
+		&emsp;&lt;body&gt;<br />
+		&emsp;&emsp;&lt;div id=&quot;over&quot;&gt;&lt;p&gt;看不到影片的人，會看到這行字，這行字也可以讓視障人士讀取。&lt;/p&gt;&lt;/div&gt;<br />
+		&emsp;&lt;/body&gt;<br />
+		&lt;/html&gt;<br />
+	</p>
+	<div id="over"><p>看不到影片的人，會看到這行字，這行字也可以讓視障人士讀取。</p></div>
+	<hr />
+	<h1>將FLASH視訊加到網頁上</h1>
+	<p>
+		三步驟: 1.將視訊轉為FLV格式。2.找到可以撥放視訊的FLV播放器(www.osflv.com提供免費開放原始碼播放器)。3.將播放器和視訊加到頁面中。<br />
+		第一個&lt;script&gt;中，type屬性表示裡面的程式碼是以JavaScript寫成的，src屬性告訴瀏覽器到哪裡尋找這份程式碼；<br />
+		第二個&lt;script&gt;是用來告訴瀏覽器關於此Flash的資訊，flashvar變數用不到所以留白，param提供影片路徑，embedSWF告訴程式要用視訊播放器取代HTML元素。
+	</p>
+	<p>		
+		語法: <br /><br />
+		&lt;!DOCTYPE html&gt;<br />
+		&lt;html&gt;<br />
+		&emsp;&lt;head&gt;<br />
+		&emsp;&emsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+		&emsp;&emsp;&lt;title&gt;Flash, Video, Audio&lt;/title&gt;<br />
+		&emsp;&emsp;&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js&quot;&gt;&lt;/script&gt;<br />
+		&emsp;&emsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+		&emsp;&emsp;&emsp;var flashvars = {};<br />
+		&emsp;&emsp;&emsp;var params = {movie:&quot;../ground control.flv&quot;};<br />
+		&emsp;&emsp;&emsp;swfobject.embedSWF(&quot;flash/OSFlvPlayer_v4.2/OSplayer.swf&quot;, &quot;groundControl&quot;, &quot;400&quot;, &quot;320&quot;, &quot;8.0.0&quot;, flashvars, params);<br />
+		&emsp;&emsp;&lt;/script&gt;<br />
+		&emsp;&lt;/head&gt;<br />
+		&emsp;&lt;body&gt;<br />
+		&emsp;&emsp;&lt;div id=&quot;groundControl&quot;&gt;&lt;p&gt;KIMULA的ground Control LIVE&lt;/p&gt;&lt;/div&gt;<br />
+		&emsp;&lt;/body&gt;<br />
+		&lt;/html&gt;<br />
+	</p>
+	<div id="groundControl"><p>KIMULA的ground Control LIVE</p></div>
+	<hr />
+	<h1 id="html5_video">HTML5:將視訊加到網站</h1>
+	<p>
+		瀏覽器支援的格式:<br />
+		H264:IE和Safari。<br />
+		WebM:Android、Chrome、Firefox、Opera。<br />
+		播放器的控制鈕是由瀏覽器控制，你也可以使用JavaScript來改變控制鈕的外觀。<br />
+		使用Flash Player播放器的問題是，當有選單之類的元素覆蓋其上，或者視窗放大縮小時，它的行為就不容易預測，HTML5可以解決這些問題。
+	</p>
+	<p>
+		語法: 將以下放在body內。<br /><br />
+		&lt;video src=&quot;視訊路徑&quot; poster=&quot;開始播放前或視訊正在下載時所顯示的影像&quot;<br />
+		&emsp;width=&quot;400&quot; height=&quot;300&quot;<br />
+		&emsp;preload=&quot;有三種值:none(在使用者案播放鍵之前，瀏覽器不應該載入視訊)、auto(瀏覽器應該在頁面載入的同時也下載視訊)、metadata(瀏覽器只需要收集大小、第一個影格、播放清單和片長之資訊)&quot;&gt;<br />
+		&emsp;controls(使用了此屬性會指定瀏覽器提供其本身的播放控制鈕)<br />
+		&emsp;autoplay(使用了此屬性會指定檔案應該自動播放)<br />
+		&emsp;loop(使用了此屬性會指定視訊應該在結束之後從頭播放一次)<br />
+		&lt;/video&gt;<br /><br />
+		controls、autoplay、loop等屬性就像是開關，存在就會開啟功能，不一定需要提供一個值。
+	</p>
+	<video src="video/ground control.webm"
+		poster="images//ground control.jpg"
+		width="400" height="300"
+		preload
+		controls>
+		<p>如果瀏覽器不支援&lt;video&gt;，就會顯示這段內容</p>
+	</video>
+	<hr />
+	<h1>HTML5:數個視訊來源</h1>
+	<p>
+		語法: 在&lt;video&gt;中使用&lt;source&gt;，來取代&lt;video&gt;開始標記中的src屬性，可以使用多個&lt;source&gt;來標明該視訊有各種不同格式可以使用。<br /><br />
+		&lt;video poster=&quot;images//ground control.jpg&quot; width=&quot;400&quot; height=&quot;320&quot; preload controls &gt;<br />
+		&emsp;&lt;source src=&quot;video/ground control.mp4&quot; type=&lsquo;video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&rsquo; /&gt;<br />
+		&emsp;&lt;source src=&quot;video/ground control.webM&quot; type=&lsquo;video/webm;codecs=&quot;vp8, vorbis&quot;&rsquo; /&gt;<br />
+		&emsp;&lt;p&gt;如果瀏覽器不支援，就會顯示這段內容&lt;/p&gt;<br />
+		&lt;/video&gt;
+	</p>
+	<video poster="images//ground control.jpg" width="400" height="320" preload controls>
+		<source src="video/ground control.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+		<source src="video/ground control.webM" type='video/webm;codecs="vp8, vorbis"' />
+		<p>如果瀏覽器不支援&lt;video&gt;，就會顯示這段內容</p>
+	</video>
+	<hr />
+	<h1>加入FLASH MP3播放器</h1>
+	<p>
+		語法: <br /><br />
+		&lt;!DOCTYPE html&gt;<br />
+		&lt;html&gt;<br />
+		&emsp;&lt;head&gt;<br />
+		&emsp;&emsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+		&emsp;&emsp;&lt;title&gt;Flash, Video, Audio&lt;/title&gt;<br />
+		&emsp;&emsp;&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js&quot;&gt;&lt;/script&gt;<br />
+		&emsp;&emsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+		&emsp;&emsp;&emsp;var flashvars = {};<br />
+		&emsp;&emsp;&emsp;var params = {mp3:&quot;../audio/Sleep Away.mp3&quot;};<br />
+		&emsp;&emsp;&emsp;swfobject.embedSWF(&quot;flash/player_mp3_maxi.swf&quot;, &quot;demoMusic&quot;, &quot;200&quot;, &quot;20&quot;, &quot;8.0.0&quot;, flashvars, params);<br />
+		&emsp;&emsp;&lt;/script&gt;<br />
+		&emsp;&lt;/head&gt;<br />
+		&emsp;&lt;body&gt;<br />
+		&emsp;&emsp;&lt;div id=&quot;demoMusic&quot;&gt;&lt;p&gt;You cannot hear this track because this browser does not support our Flash music player.&lt;/p&gt;&lt;/div&gt;<br />
+		&emsp;&lt;/body&gt;<br />
+		&lt;/html&gt;<br />
+	</p>
+	<div id="demoMusic"><p>You cannot hear this track because this browser does not support our Flash music player.</p></div>
+	<hr />
+	<h1>HTML5:將HTML5音訊加到網頁上</h1>
+	<p>
+		語法: &lt;audio&gt; <br /><br />
+		&lt;audio src=&quot;音訊檔的路徑&quot; controls(播放器是否應該顯示控制按鈕，可以自己用JavaScript來指定自己的控制按鈕) autoplay(自動播放) preload(和<a href="#html5_video">video的preload</a>一樣有三種值) loop(是否重複播放) &gt;<br />
+		&emsp;&lt;p&gt;The browser does not support our audio format.&lt;/p&gt;<br />
+		&lt;/audio&gt;
+	</p>
+	<audio src="audio/Sleep Away.mp3" controls><p>The browser does not support our audio format.</p></audio>
+	<hr />
+	<h1>HTML5:多重音訊來源</h1>
+	<p>
+		語法: &lt;source&gt;<br /><br />
+		&lt; audio controls&gt;<br />
+		&emsp;&lt;source src=&quot;audio/Sleep Away.ogg&quot; /&gt;<br />
+		&emsp;&lt;source src=&quot;audio/Sleep Away.mp3&quot; /&gt;<br />
+		&emsp;&lt;p&gt;This browser does not support our audio format.&lt;/p&gt;<br />
+		&lt;/audio&gt;<br /><br />
+		瀏覽器支援的音訊檔格式:<br />
+		MP3(Safari 5+、Chrome 6+)<br />
+		Ogg Vorbis(Firefox 3.6、Chome 6、Opera 1.5、IE9)
+	</p>
+	<audio controls>
+		<source src="audio/Sleep Away.ogg" />
+		<source src="audio/Sleep Away.mp3" />
+		<p>This browser does not support our audio format.</p>
+	</audio>
+</body>
+</html>

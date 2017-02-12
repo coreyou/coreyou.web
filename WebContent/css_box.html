@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Box</title>
+	</head>
+	<body>
+		<a href="index.html">Return to Index</a>
+		<h1>方框尺寸</h1>
+		<p class="describtion">
+			height和width屬性：<br />
+			指定方框的尺寸最常使用像素、百分比或em。<br />
+			在過去，像素是最熱門的方法，因為可以精確控制方框大小。<br />
+			當你使用百分比時，方框的尺寸和瀏覽器視窗是相關的。若方框是在另一個方框內，那麼它指的就是容器方框的百分比。<br />
+			當你使用em時，方框尺寸是以容器的大小為基準的。最近設計師在因應各種不同尺寸螢幕的裝置進行設計時，有開始改採百分比和em來當作單位的現象。<br />
+			下面的例子中，如果&lt;p&gt;位於&lt;div class=&quot;box&quot;&gt;裡面，那麼其75%就會等於500px的75%，也就是375px。
+		</p>
+		<p class="code">
+			div.box {<br />
+			&emsp;height: 500px;<br />
+			&emsp;width: 500px;<br />
+			&emsp;background-color: #bbbbaa;<br />
+			}<br />
+			p {<br />
+			&emsp;height: 75%;<br />
+			&emsp;width: 75%;<br />
+			&emsp;background-color: #0088dd;<br />
+			}
+		</p>
+		<a href="width_height.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>限制寬度</h1>
+		<p class="describtion">
+			min-width: 當瀏覽器視窗很窄時，方框至多只能縮小到哪個尺寸。<br />
+			max-width: 當瀏覽器視窗很寬時，方框至多只能放大到哪個尺寸。<br />
+		</p>
+		<p class="code">
+			td.description {<br />
+			&emsp;min-width: 450px;<br />
+			&emsp;max-width: 650px;<br />
+			&emsp;text-align: left;<br />
+			&emsp;padding: 5px;<br />
+			&emsp;margin: 0px;<br />
+			}
+		</p>
+		<a href="min_max_width.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>限制高度</h1>
+		<p class="describtion">
+			min-height和	max-height屬性。<br />
+			如果方框不夠容納其內容，而造成內容溢出方塊外，看起來可能會很亂。
+		</p>
+		<p class="code">
+			p {<br />
+			&emsp;min-height: 10px;<br />
+			&emsp;max-height: 30px;<br />
+			}
+		</p>
+		<a href="min_max_height.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>溢出內容</h1>
+		<p class="describtion">
+			overflow屬性:<br />
+			可以接受兩種值，hidden或是scroll，hidden會直接隱藏方框容納不下的內容，scroll會在方框內加入捲軸。
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;overflow: hidden;<br />
+			}<br />
+			p.two {<br />
+			&emsp;overflow: scroll;<br />
+			}
+		</p>
+		<a href="overflow.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>邊框寬度</h1>
+		<p class="describtion">
+			border-width屬性: 可以使用像素為單位，也可以接受以下三種值，thin、medium、thick。<br />
+			你也可以使用下列四個屬性來分別控制各邊框的尺寸: border-top-width、border-right-width、border-bottom-width、border-left-width。<br />
+			也可以在一個屬性中一次為四個邊框指派不同的寬度: border-width: 2px 1px 1px 2px; (此方框的上邊框為2px、右邊框為1px、下邊框為1px、左邊框為2px)。<br />
+			發現在firefox中單純指定邊框寬度，卻沒有指定邊框樣式，是不會出現邊框的。
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;border-width: 2px;<br />
+			}<br />
+			p.two {<br />
+			&emsp;border-width: thick;<br />
+			}<br />
+			p.three {<br />
+			&emsp;border-width: 1px 4px 12px 4px;<br />
+			}
+		</p>
+		<a href="border_width.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>邊框樣式</h1>
+		<p class="describtion">
+			border-style屬性: 可以接受下列值:<br />
+			solid 單實線<br />
+			dotted 一組方格點(如果你的邊框是2px寬，那麼點就是2px方格然後每個點之間有2px的間距)<br />
+			dashed 一組短線<br />
+			double 兩條實線(border-width屬性值是兩條線的總和)<br />
+			groove 看起來像是刻入頁面<br />
+			ridge  看起來像是凸出頁面<br />
+			inset  看起來像是嵌入頁面<br />
+			outset 看起來像是浮雕<br />
+			hidden/none 無邊框<br />
+			你也可以使用下列四個屬性來分別控制各邊框的樣式: border-top-style、border-left-style、border-right-style、border-bottom-style。
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: solid;<br />
+			}<br />
+			p.two {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: dotted;<br />
+			}<br />
+			p.three {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: dashed;<br />
+			}<br />
+			p.four {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: double;<br />
+			}<br />
+			p.five {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: groove;<br />
+			}<br />
+			p.six {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: ridge;<br />
+			}<br />
+			p.seven {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: inset;<br />
+			}<br />
+			p.eight {<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;border-style: outset;<br />
+			}
+		</p>
+		<a href="border_style.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>邊框顏色</h1>
+		<p class="describtion">
+			border-color屬性: 可以接受HSL值、RGB值、hex碼、CSS顏色名。<br />
+			你也可以使用下列四個屬性來分別控制各邊框的樣式: border-top-color、border-left-color、border-right-color、border-bottom-color。<br />
+			你也可以使用速記法在一個屬性當中控制所有邊框的顏色: border-color: darkcyan deeppink darkcyan deeppink;(此處的值是以順時針方式出現:上、右、下、左)
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;border-color: #0088dd;<br />
+			&emsp;border-style: solid;<br />
+			}<br />
+			p.two {<br />
+			&emsp;border-color: #bbbbaa #111111 #ee3e80 #0088dd;<br />
+			&emsp;border-style: solid;<br />
+			}
+		</p>
+		<a href="border_color.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>速記</h1>
+		<p class="describtion">
+			border屬性: 可以在這一個單一屬性中，同時指定邊框寬度、樣式和顏色。<br />
+			你也可以使用下列四個屬性來分別控制各邊框的樣式: border-top-color、border-right-color、border-bottom-color、border-left-color。<br />
+			你也可以使用速記法在一個屬性當中控制所有邊框的顏色: border-color: darkcyan deeppink darkcyan deeppink;(此處的值是以順時針方式出現:上、右、下、左)
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;border: 3px dotted #0088dd;<br />
+			}<br />
+		</p>
+		<a href="border.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>內距</h1>
+		<p class="describtion">
+			內容和邊框之間應該保持多少空間。<br />
+			padding屬性: 通常以像素為單位，如果使用百分比為單位的話，表示的是瀏覽器視窗的百分比或是容器方框的百分比。<br />
+			你也可以使用下列四個屬性來分別控制各邊框的內距: padding-top、padding-right、padding-bottom、padding-left。<br />
+			你也可以使用速記來指定(以順時針為方向: 上、右、下、左): padding: 10px 5px 3px 1px;<br />
+			請注意: 內距會直接增加方框的寬度，當方框已經有指定寬度的時候要注意。<br />
+			padding屬性的值並不會像font-family屬性的color值一樣，被子元素繼承，所以你必須在每個需要內距的元素上指定padding。
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;padding: 10px 5px 3px 1px;<br />
+			}<br />
+		</p>
+		<a href="padding.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>邊界</h1>
+		<p class="describtion">
+			margin屬性: 方框之間的空隙。通常以像素為單位，也可以使用百分比或em。<br />
+			你也可以使用下列四個屬性來分別控制各邊框的內距: margin-top、margin-right、margin-bottom、margin-left。<br />
+			如果一個方框在另一個方框上面，邊界就會交疊，意思就是，兩者之間比較大的邊界就會被使用，較小的邊界就會被丟棄。<br />
+			你也可以使用速記來指定(以順時針為方向: 上、右、下、左): margin: 1px 2px 3px 4px;<br />
+			你也可以另外一種速記來指定(左右、上下): margin: 10px 20px;<br />
+			請注意: 如果方框指派了一個寬度，邊界會加到方框寬度之上。<br />
+			margin屬性的值並不會像font-family屬性的color值一樣，被子元素繼承，所以你必須在每個需要邊界的元素上指定margin。
+		</p>
+		<p class="code">
+			p.one {<br />
+			&emsp;margin: 20px;<br />
+			}<br />
+		</p>
+		<a href="margin.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>將內容置中對齊</h1>
+		<p class="describtion">
+			如果你想將一個方框放在頁面中央，你可以將left-margin和right-margin設定為auto。<br />
+			為了將方框置中，你需要為方框設定一個寬度(否則他會佔據整個頁面的寬度)。<br />
+			方框的寬度設定好之後，將左右邊界設為auto就會使瀏覽器在方框的兩側加入等寬的空隙。<br />
+			為了讓這個功能在較舊的瀏覽器中正確顯示，容器方框必須有一個text-align: center;<br />
+			text-align會繼承給子元素，因此如果你不希望方框中的文字也置中的話，就需要在方框中設定text-align屬性。
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;text-align: center;<br />
+			}<br />
+			p {<br />
+			&emsp;width: 300px;<br />
+			&emsp;border: 3px solid #0088dd;<br />
+			&emsp;padding: 50px;<br />
+			}<br />
+			p.two {<br />
+			&emsp;margin: 20px auto 20px auto;<br />
+			&emsp;text-align: left;<br />
+			}
+		</p>
+		<a href="centering_content.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>IE6方框模型</h1>
+		<p class="describtion">
+			當你指定方框的寬度時，任何內距或邊界都會額外加道寬度上。不過Internet Explorer 6，卻會將內距和邊界算在方框的寬度內。<br />
+			這個問題的解決方案是在HTML頁面提供一個DOCTYPE宣告。你可以使用HTML5、HTML 4 strict或HTML 4 transitional DOCTYPE宣告。
+		</p>
+		<a href="otherTag.html" target="_blank">DOCTYPE</a>
+		<hr />
+		<h1>更改行內/區塊狀態</h1>
+		<p class="describtion">
+			display屬性。可以讓你將一個行內元素轉為區塊層級元素，或相反之。他也可以用來隱藏頁面中的元素。<br />
+			display: inline;(使區塊層級元素表現出行內元素的行為)<br />
+			display: block;(使行內元素表現出區塊元素的行為)<br />
+			display: inline-block;(這會使區塊層級元素和行內元素一樣流動，但是依然保持區塊層級元素的其他特性)<br />
+			display: none;(隱藏元素，但是在原始碼檢視的時候還是看的到方框內容)<br />
+			如果你使用display這個屬性的話，行內方框並不會製作出區塊層級元素。
+		</p>
+		<p class="code">
+			&lt;html&gt;<br />
+			&emsp;&lt;head&gt;<br />
+			&emsp;&emsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+			&emsp;&emsp;&lt;title&gt;Display&lt;/title&gt;<br />
+			&emsp;&emsp;&lt;style type=&quot;text/css&quot;&gt;<br />
+			&emsp;&emsp;&emsp;li {<br />
+			&emsp;&emsp;&emsp;&emsp;display: inline;<br />
+			&emsp;&emsp;&emsp;&emsp;margin-right: 10px;<br />
+			&emsp;&emsp;&emsp;}<br />
+			&emsp;&emsp;&emsp;li.coming_soon {<br />
+			&emsp;&emsp;&emsp;&emsp;display: none;<br />
+			&emsp;&emsp;&emsp;}<br />
+			&emsp;&emsp;&lt;/style&gt;<br />
+			&emsp;&lt;/head&gt;<br />
+			&emsp;&lt;body&gt;<br />
+			&emsp;&emsp;&lt;ul&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;Home&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;Products&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li class="coming_soon">Services&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;About&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;Contact&lt;/li&gt;<br />
+			&emsp;&emsp;&lt;/ul&gt;<br />
+			&emsp;&lt;/body&gt;<br />
+			&lt;/html&gt;
+		</p>
+		<a href="display.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>隱藏方框</h1>
+		<p class="describtion">
+			visibility屬性。可以讓你將方框隱藏不見，但將原有位置空下來。<br />
+			visibility: hidden;(隱藏元素)<br />
+			visibility: visible;(顯示元素)<br />
+			如果元素的visibility是hidden，原來應該呈現的位置就會是空白，如果你不希望出現空白，則應該使用display: none;
+		</p>
+		<p class="code">
+			&lt;html&gt;<br />
+			&emsp;&lt;head&gt;<br />
+			&emsp;&emsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+			&emsp;&emsp;&lt;title&gt;Display&lt;/title&gt;<br />
+			&emsp;&emsp;&lt;style type=&quot;text/css&quot;&gt;<br />
+			&emsp;&emsp;&emsp;li {<br />
+			&emsp;&emsp;&emsp;&emsp;display: inline;<br />
+			&emsp;&emsp;&emsp;&emsp;margin-right: 10px;<br />
+			&emsp;&emsp;&emsp;}<br />
+			&emsp;&emsp;&emsp;li.coming_soon {<br />
+			&emsp;&emsp;&emsp;&emsp;visibility: hidden;<br />
+			&emsp;&emsp;&emsp;}<br />
+			&emsp;&emsp;&lt;/style&gt;<br />
+			&emsp;&lt;/head&gt;<br />
+			&emsp;&lt;body&gt;<br />
+			&emsp;&emsp;&lt;ul&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;Home&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;Products&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li class="coming_soon">Services&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;About&lt;/li&gt;<br />
+			&emsp;&emsp;&emsp;&lt;li&gt;Contact&lt;/li&gt;<br />
+			&emsp;&emsp;&lt;/ul&gt;<br />
+			&emsp;&lt;/body&gt;<br />
+			&lt;/html&gt;
+		</p>
+		<a href="visibility.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>CSS3: 邊框影像</h1>
+		<p class="describtion">
+			border-image屬性。他會將一張背景切成九片。<br />
+			border-image屬性是下列屬性的速記: border-image-source、border-image-slice、border-image-width、border-image-outset、border-image-repeat。<br />
+			語法: border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 stretch||round||repeat;<br />
+			屬性中的資訊第一個為影像的URL，第二個為切割的位置，第三個是stretch、repeatround、round三者擇一，<br />
+			stretch會延伸影像；repeat會重複影像；round也會重複影像，但如果拼接不完全吻合，它就會縮放拼接影像使之吻合。<br />
+			-moz-border-image和-webkit-border-image並不在CSS規格內，但可以幫助舊版的Chrome、Firefox和safari。
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;text-align: center;<br />
+			}<br />
+			p.one {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 20px;<br />
+			&emsp;-moz-border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 stretch;<br />
+			&emsp;-webkit-border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 stretch;<br />
+			&emsp;border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 stretch;<br />
+			}<br />
+			p.two {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 20px;<br />
+			&emsp;-moz-border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 round;<br />
+			&emsp;-webkit-border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 round;<br />
+			&emsp;border-image: url(&quot;images/border.jpg&quot;) 11 11 11 11 round;<br />
+			}
+		</p>
+		<a href="border_image.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>CSS3: 方框陰影</h1>
+		<p class="describtion">
+			box-shadow屬性。<br />
+			語法: box-shadow: h-shadow v-shadow blur spread color inset;。<br />
+			前兩個值不能省略，所以box-shadow至少為前兩個值加上一個顏色值。<br />
+			h-shadow，就是horizontal offset，負數值會將陰影放在方框左側。<br />
+			v-shadow，就是vertical offset，負數值會將陰影放在方框上方。<br />
+			blur，就是blur distance，如果略過不寫，陰影就會呈現像邊框一樣的實線。<br />
+			spread，就是spread of shadow，正數值會使陰影往所有方向伸展，負數值則會將陰影縮減。<br />
+			inset，將外陰影轉為內陰影。<br />
+			-moz-box-shadow和-webkit-box-shadow並不在CSS規格內，但可以幫助舊版的Chrome、Firefox和safari。
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;text-align: center;<br />
+			}<br />
+			p.one {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;-moz-border-image: -5px -5px #777777;<br />
+			&emsp;-webkit-border-image: -5px -5px #777777;<br />
+			&emsp;border-image: -5px -5px #777777;<br />
+			}<br />
+			p.two {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;-moz-border-image: 5px 5px 5px #777777;<br />
+			&emsp;-webkit-border-image: 5px 5px 5px #777777;<br />
+			&emsp;border-image: 5px 5px 5px #777777;<br />
+			}<br />
+			p.three {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;-moz-border-image: 5px 5px 5px 5px #777777;<br />
+			&emsp;-webkit-border-image: 5px 5px 5px 5px #777777;<br />
+			&emsp;border-image: 5px 5px 5px 5px #777777;<br />
+			}<br />
+			p.four {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;-moz-border-image: 0 0 10px #777777;<br />
+			&emsp;-webkit-border-image: 0 0 10px #777777;<br />
+			&emsp;border-image: 0 0 10px #777777;<br />
+			}<br />
+			p.five {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;-moz-border-image: 0 0 10px #777777 inset;<br />
+			&emsp;-webkit-border-image: 0 0 10px #777777 inset;<br />
+			&emsp;border-image: 0 0 10px #777777 inset;<br />
+			}<br />
+		</p>
+		<a href="box_shadow.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>CSS3: 圓角</h1>
+		<p class="describtion">
+			border-radius屬性。用像素來指定半徑尺寸。<br />
+			語法: border-radius: 5px, 10px, px, 10px;(順時鐘方向:上、右、下、左)。<br />
+			可以使用下列屬性為方框的各邊角指定個別的值: border-top-right-radius、border-bottom-right-radius、border-bottom-left-radius、border-top-left-radius。
+			-moz-box-shadow和-webkit-box-shadow並不在CSS規格內，但可以幫助舊版的Chrome、Firefox和safari。
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;text-align: center;<br />
+			}<br />
+			p.one {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-color: #cccccc;<br />
+			&emsp;border-width: 5px;<br />
+			&emsp;-moz-border-radius: 10px;<br />
+			&emsp;-webkit-border-radius: 10px;<br />
+			&emsp;border-radius: 10px;<br />
+			}
+		</p>
+		<a href="border_radius.html" target="_blank">DEMO</a>
+		<hr />
+		<h1>CSS3: 橢圓形</h1>
+		<p class="describtion">
+			語法: border-radius: 80px 50px;(水平和垂直的距離)。<br />
+			可以使用下列屬性為方框的各邊角指定個別的值: border-top-right-radius、border-bottom-right-radius、border-bottom-left-radius、border-top-left-radius。<br />
+			也可以使用速記法，一次指派四個水平和四個垂直值: border-radius: 1em 4em 1em 4em / 2em 1em 2em 1em;。<br />
+			你可以在一個正方形的方框中，將border-radius設為和方框相同的高度，就可以做出圓形。
+		</p>
+		<p class="code">
+			body {<br />
+			&emsp;text-align: center;<br />
+			}<br />
+			p {<br />
+			&emsp;border-style: solid;<br />
+			&emsp;border-color: #cccccc;<br />
+			&emsp;border-width: 5px;<br />
+			}
+			p.one {<br />
+			&emsp;border-top-left-radius: 80px 50px;<br />
+			&emsp;-moz-border-radius-top-left: 80px 50px;<br />
+			&emsp;-webkit-border-radius-top-left: 80px 50px;<br />
+			}
+			p.one {<br />
+			&emsp;border-radius: 1em 4em 1em 4em / 2em 1em 2em 1em;<br />
+			&emsp;-moz-border-radius: 1em 4em 1em 4em / 2em 1em 2em 1em;<br />
+			&emsp;-webkit-border-radius: 1em 4em 1em 4em / 2em 1em 2em 1em;<br />
+			}
+		</p>
+		<a href="elliptical_shape.html" target="_blank">DEMO</a>
+		<hr />
+	</body>
+</html>

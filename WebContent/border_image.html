@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Border Image</title>
+		<style type="text/css">
+			p.one {
+				border-style: solid;
+				border-width: 20px;
+				// 以下兩行不在CSS規格，但可以幫助舊版的Chrome、Firefox、Safari顯示此效果			
+				-moz-border-image: url("images/border.jpg") 11 11 11 11 stretch;
+				-webkit-border-image: url("images/border.jpg") 11 11 11 11 stretch;
+				
+				border-image: url("images/border.jpg") 11 11 11 11 stretch;
+			}
+			p.two {
+				border-style: solid;
+				border-width: 20px;
+				// 以下兩行不在CSS規格，但可以幫助舊版的Chrome、Firefox、Safari顯示此效果
+				-moz-border-image: url("images/border.jpg") 11 11 11 11 round;
+				-webkit-border-image: url("images/border.jpg") 11 11 11 11 round;
+				
+				border-image: url("images/border.jpg") 11 11 11 11 round;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Potatoes</h1>
+		<h2>Very delicious</h2>
+		<p class="one">Taiwanese people believe that ghosts leave the underworld for one month every year. To ensure that these ghosts are happy and do not bother them, Taiwanese people observe certain traditions during “Ghost Month.” This festival takes place in July on the lunar calendar. Ghost Month is a time when families pray for the ghosts of their ancestors. They will also leave food out to feed any “hungry ghosts” that might wander by.</p>
+		<p class="two">Taiwanese people believe that ghosts leave the underworld for one month every year. To ensure that these ghosts are happy and do not bother them, Taiwanese people observe certain traditions during “Ghost Month.” This festival takes place in July on the lunar calendar. Ghost Month is a time when families pray for the ghosts of their ancestors. They will also leave food out to feed any “hungry ghosts” that might wander by.</p>
+	</body>
+</html>

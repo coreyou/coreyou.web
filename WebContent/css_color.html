@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Color</title>
+</head>
+<body>
+	<a href="index.html">Return to Index</a>
+	<h1>前景色</h1>
+	<p class="describtion">
+		在CSS中可以使用三種方式來指定顏色: RGB值(rgb(100,100,90))、HEX碼(#ee3e80)、顏色名(147種預定義顏色名，例如：DarkCyan)。
+	</p>
+	<p class="code">
+		/* color name */<br />
+		h1 {<br />
+		&emsp;color: DarkCyan;<br />
+		}<br />
+		/* hex code */<br />
+		h2 {<br />
+		&emsp;color: #ee3e80;<br />
+		}<br />
+		/* rgb value */<br />
+		p {<br />
+		&emsp;color: rgb(100,100,90);<br />
+		}<br />
+	</p>
+	<a href="foreground_color.html" target="_blank">DEMO</a>
+	<hr /> 
+	<h1>背景色</h1>
+	<p class="describtion">
+		你如果不指定方框的背景色的話，背景色就是透明的。在預設值下，大部分的瀏覽器視窗都是白色背景，也可以在&lt;body&gt;元素中使用background-color來更改。
+	</p>
+	<p class="code">
+		body {<br />
+		&emsp;background-color: rgb(200,200,200);<br />
+		}<br />
+		h1 {<br />
+		&emsp;background-color: DarkCyan;<br />
+		}<br />
+		h2 {<br />
+		&emsp;background-color: #ee3e80;<br />
+		}<br />
+		p {<br />
+		&emsp;background-color: white;<br />
+		}<br />
+	</p>
+	<a href="background_color.html" target="_blank">DEMO</a>
+	<hr />
+	<h1>CSS3:不透明度</h1>
+	<p class="describtion">
+		CSS3推出了opacity屬性，值介於0.0到1.0。<br />
+		CSS3的rgba屬性就像RGB值一樣，但它加入第四個值來指定不透明度。因為有些瀏覽器不認得RGBA，所以可以提供一個候補的實色寫在RGBA前面。
+	</p>
+	<p class="code">
+		p.one {<br />
+		&emsp;background-color: rgb(0,0,0);<br />
+		&emsp;opacity: 0.5;<br />
+		}<br />
+		p.two {<br />
+		&emsp;background-color: rgb(0,0,0);<br />
+		&emsp;background-color: rgba(0,0,0,0.5);<br />
+		}<br />
+	</p>
+	<a href="opacity.html" target="_blank">DEMO</a>
+	<hr />  
+	<h1>CSS3:HSL和HSLA</h1>
+	<p class="describtion">
+		hsla(hue, saturation, lightness, alpha)<br />
+		hue(色相): 以整數表示。 0 或 360表示紅色， 60表示黃色， 120表示綠色， 240表示藍色，就好像彩虹色繞成一個圓。如同數學角度，負值或超過 360 是允許的，不過這樣用好像是有點自找麻煩。<br />
+		saturation(彩度): 0% ~ 100% 的百分比值，表示一個顏色的灰色量，0%表示某一階的灰色調， 100%表示最大飽和度。所以 0% 時，不論 hue 值是多少，都會以灰階單色呈現。<br />
+		lightness(明度): 0% ~ 100% 的百分比值，表示一個顏色的黑色量，0%表示最暗為黑色， 100%表示最亮為白色， 50%為正常亮度。 50% 以上漸漸增加白色， 50% 以下漸漸增加黑色。<br />
+		alpha(透明度): 0.0 ~ 1.0<br />
+		因為舊瀏覽器不認得HSL和HSLA，所以額外加入一條使用hex值、RGB值或顏色名的規則在HSL或HSLA前面來指定該顏色。
+	</p>
+	<p class="code">
+		body {<br />
+		&emsp;background-color: #C8C8C8;<br />
+		&emsp;background-color: hsl(0,0%,78%);<br />
+		}<br />
+		p {<br />
+		&emsp;background-color: #ffffff;<br />
+		&emsp;background-color: hsla(0,100%,100%,0.5);<br />
+		}<br />
+	</p>
+	<a href="hsla.html" target="_blank">DEMO</a>
+</body>
+</html>

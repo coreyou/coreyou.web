@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Image Rollovers and Sprites</title>
+		<style type="text/css">
+			a.button {
+				height: 44px;
+				background-image: url("images/img_navsprites_hover.gif");
+				display: inline-block;
+			}
+			a#home {
+				left: 0px;
+    			width: 46px;
+    			background-position: 0px 0px;
+			}
+			a#prev {
+				left: 63px;
+    			width: 43px;
+    			background-position: -47px 0px;
+			}
+			a#next {
+			    left: 129px;
+			    width: 43px;
+			    background-position: -91px 0px;
+			} 
+			a#home:hover {
+			    background-position: 0 -45px;
+			}
+			
+			a#prev:hover {
+			    background-position: -47px -45px;
+			}
+			
+			a#next:hover {
+			    background-position: -91px -45px;
+			}
+			a#home:active {
+			    background-position: 0px 0px;
+			}
+			
+			a#prev:active {
+			    background-position: -47px 0px;
+			}
+			
+			a#next:active {
+			    background-position: -91px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<a class="button" id="home"></a>
+		<a class="button" id="prev"></a>
+		<a class="button" id="next"></a>
+	</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Introduction</title>
+</head>
+<body>
+	<a href="index.html">Return to Index</a>
+	<h1>選取器和宣告、屬性和值</h1>
+	<p class="describtion">
+		語法: CSS的語法如下<br /><br />
+	</p>
+	<p class="code">
+		h1, h2, h3 { <br />
+		&emsp;font-family: Arial;<br />
+		&emsp;color: yellow;<br />
+		}<br /><br />
+		以上語法規定了&lt;h1&gt;、&lt;h2&gt;、&lt;h3&gt;的樣式。h1, h2, h3是選取器(selector)；大括號裡面是宣告；宣告中，冒號以前是屬性，冒號以後是值。
+	</p>
+	<hr />
+	<h1>使用外部CSS</h1>
+	<p class="describtion">
+		語法: 在&lt;head&gt;內，使用&lt;link&gt;連結到CSS檔案。<br /><br />
+	</p>
+	<p class="code">
+		<table>
+			<tr>
+    			<td>using_external_css.html</td>
+    			<td>HTML</td>
+  			</tr>
+  			<tr>
+    			<td colspan="2">
+    				&lt;!DOCTYPE html&gt;<br />
+    				&lt;html&gt;<br />
+    				&emsp;&lt;head&gt;<br />
+    				&emsp;&emsp;&lt;title&gt;Using External CSS&lt;/title&gt;<br />
+    				&emsp;&emsp;&lt;link href=&quot;css/using_external_css.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;<br />
+    				&emsp;&lt;/head&gt;<br />
+    				&emsp;&lt;body&gt;<br />
+    				&emsp;&emsp;&lt;h1&gt;Potatoes&lt;/h1&gt;<br />
+    				&emsp;&emsp;&lt;p&gt;There are dozens of different potato varieties. They are usually described as early. second early and maincrop.&lt;/p&gt;<br />
+    				&emsp;&lt;/body&gt;<br />
+    				&lt;/html&gt;
+    			</td>
+  			</tr>
+		</table> 
+		<br />
+		<table>
+			<tr>
+    			<td>using_external_css.css</td>
+    			<td>CSS</td>
+  			</tr>
+  			<tr>
+    			<td colspan="2">
+    				body {<br />
+    				&emsp;font-family: arial;<br />
+    				&emsp;background-color: rgb(185,179,175);<br />
+    				}<br />
+    				h1 {<br />
+    				&emsp;color: rgb(255,255,255);<br />
+    				}
+    			</td>
+  			</tr>
+		</table> 
+	</p>
+	<a href="using_external_css.html" target="_blank">DEMO</a> 
+	<hr />
+	<h1>使用內部CSS</h1>
+	<p class="code">
+		語法: 
+		<table>
+			<tr>
+    			<td>using_external_css.html</td>
+    			<td>HTML</td>
+  			</tr>
+  			<tr>
+    			<td colspan="2">
+    				&lt;!DOCTYPE html&gt;<br />
+    				&lt;html&gt;<br />
+    				&emsp;&lt;head&gt;<br />
+    				&emsp;&emsp;&lt;title&gt;Using Internal CSS&lt;/title&gt;<br />
+    				&emsp;&emsp;&lt;style type=&quot;text/css&quot;&gt;<br />
+    				&emsp;&emsp;&emsp;body {<br />
+    				&emsp;&emsp;&emsp;&emsp;font-family: arial;<br />
+    				&emsp;&emsp;&emsp;&emsp;background-color: rgb(185,179,175);<br />
+    				&emsp;&emsp;&emsp;}<br />
+    				&emsp;&emsp;&emsp;h1 {<br />
+    				&emsp;&emsp;&emsp;&emsp;color: rgb(255,255,255);<br />
+    				&emsp;&emsp;&emsp;}<br />
+    				&emsp;&emsp;&lt;/style&gt;<br />
+    				&emsp;&lt;/head&gt;<br />
+    				&emsp;&lt;body&gt;<br />
+    				&emsp;&emsp;&lt;h1&gt;Potatoes&lt;/h1&gt;<br />
+    				&emsp;&emsp;&lt;p&gt;There are dozens of different potato varieties. They are usually described as early. second early and maincrop.&lt;/p&gt;<br />
+    				&emsp;&lt;/body&gt;<br />
+    				&lt;/html&gt;
+    			</td>
+  			</tr>
+		</table> 
+	</p>
+	<a href="using_internal_css.html" target="_blank">DEMO</a>
+	<hr /> 
+	<h1>CSS選取器</h1>
+	<p class="describtion">
+		語法: 選擇器有大小寫區別<br />
+		<table>
+			<tr>
+    			<td>選取器</td>
+    			<td>意義</td>
+    			<td>範例</td>
+  			</tr>
+  			<tr>
+    			<td>全域選取器</td>
+    			<td>套用到文件的所有元素上</td>
+    			<td>
+    				* {}<br />
+    				找出頁面上所有元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>類型選取器</td>
+    			<td>找出符合的元素名稱</td>
+    			<td>
+    				h1, h2, h3 {}<br />
+    				找出&lt;h1&gt;、&lt;h2&gt;和&lt;h3&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>CLASS選取器</td>
+    			<td>找出class屬性值符合句號後所指定的值之元素</td>
+    			<td>
+    				.note {}<br />
+    				找出任何class屬性值為note的元素<br />
+    				p.note {}<br />
+    				找出class屬性值為note的&lt;p&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>ID選取器</td>
+    			<td>找出id屬性值符合#符號後所指定的值之元素</td>
+    			<td>
+    				#introduction {}<br />
+    				找出id屬性值為introduction的元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>子元素選取器</td>
+    			<td>找出一元素之直系子元素</td>
+    			<td>
+    				li>a {}<br />
+    				找出任何身為&lt;li&gt;元素之子的&lt;a&gt;元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>後代選取器</td>
+    			<td>找出一指定元素之後代元素(不僅是直系子元素)</td>
+    			<td>
+    				p a {}<br />
+    				找出任何位在&lt;p&gt;元素內的&lt;a&gt;元素，即使兩者之間還有堆疊了其他元素
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>相連手足選取器</td>
+    			<td>找出一元素之相連手足元素</td>
+    			<td>
+    				h1+p {}<br />
+    				找出&lt;h1&gt;元素之後的第一個&lt;p&gt;元素(但排除其他&lt;p&gt;元素)
+    			</td>
+  			</tr>
+  			<tr>
+    			<td>整體手足選取器</td>
+    			<td>找出一元素之手足元素，即使它並非直接相連的元素</td>
+    			<td>
+    				h1~p {}<br />
+    				如果&lt;h1&gt;元素有兩個&lt;p&gt;元素，此規則會套用到兩者上
+    			</td>
+  			</tr>
+  		</table>
+	</p>
+	<hr />
+	<h1>CSS如何規範階層</h1>
+	<p class="describtion">
+		規則:<br />
+		<dl>
+		  	<dt>1.後來先贏</dt>
+  			<dd>如果兩個選取器相同的話，後者優先。</dd>
+			<dt>2.指定程度</dt>
+  			<dd>
+				較具指定性的規則優先。例如:<br />
+				h1比*更具指定性、p b比p更具指定性、p#intro比p更具指定性。
+			</dd>
+		</dl> 
+	</p>
+	<hr />
+	<h1>繼承</h1>
+	<p class="describtion">
+		如果你指定&lt;body&gt;元素的font-family或color屬性，也會套用到大部分的子元素上。<br />
+		然而像是background-color或border屬性並不會繼承給子元素。<br />
+		你可以在屬性中使用inherit值，來強迫許多屬性從父元素那裡繼承屬性值。例如:<br /><br />
+	</p>
+	<p class="code">
+		body {<br />
+		&emsp;font-family: Arial, Verdana, sans-serif;<br />
+		&emsp;color: #665544;<br />
+		&emsp;padding: 10px;}<br />
+		.page {<br />
+		&emsp;border: 1px solid #665544;<br />
+		&emsp;background-color: #efefef;<br />
+		&emsp;padding: inherit;}<br /><br />
+		class=&quot;page&quot; 的元素的內距尺寸會套用到&lt;body&gt;元素的CSS規則。
+	</p>
+	<hr />
+</body>
+</html>

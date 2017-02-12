@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>other tag</title>
+</head>
+<body>
+<a href="index.html">Return to Index</a>
+<h1>DOCTYPES</h1>
+<p>
+	<b>HTML5:</b><br />
+	&lt;!DOCTYPE html&gt;<br /><br />
+	<b>HTML4:</b><br />
+	&lt;!DOCTYPE html PUBLIC<br />
+	&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;<br />
+	&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;<br /><br />
+	<b>Transitional XHTML 1.0:</b><br />
+	&lt;!DOCTYPE html PUBLIC<br />
+	&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;<br />
+	&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;<br /><br />
+	<b>Strict XHTML 1.0:</b><br />
+	&lt;!DOCTYPE html PUBLIC<br />
+	&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;<br />
+	&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;<br /><br />
+	<b>XML Declaration:</b><br />
+	&lt;?xml version=&quot;1.0&quot;&gt;<br /><br />
+</p>
+<hr />
+<h1>HTML裡的註解(comments in thml)</h1>
+<p>
+	語法: &lt;!--文字放在這裡--&gt;
+</p>
+<hr />
+<h1>ID屬性(id attribute)</h1>
+<p>
+	每個HTML元素都可以使用id屬性，所以是全域屬性(global attribute)。須以字母或下滑線做開頭。同一個頁面的兩個元素不能有相同的id屬性值。<br /><br />
+	語法: &lt;p id=&quot;id_attribute&quot;&gt;&lt;/p&gt;
+</p>
+<hr />
+<h1>CLASS屬性(class attribute)</h1>
+<p>
+	每個HTML元素都可以使用class屬性。將幾個元素從其他元素中獨立出來識別。在任何元素上的class屬性都可以共用相同的值。若想要標明某個元素屬於數個class的話，可以將class名稱用空格分開。<br /><br />
+	語法: <br />
+	&lt;p class=&quot;important&quot;&gt;&lt;/p&gt;<br />
+	&lt;p class=&quot;important admittance&quot;&gt;使用兩個class屬性&lt;/p&gt;
+</p>
+<hr />
+<h1>區塊元素(block elements)</h1>
+<p>
+	區塊元素包括: &lt;h1&gt;、&lt;p&gt;、&lt;u1&gt;、&lt;li&gt;<br />
+	這些元素會在瀏覽器視窗中另起一行，他們稱為區塊層級(block level)元素。
+</p>
+<hr />
+<h1>行內元素(inline elements)</h1>
+<p>
+	行內元素包括: &lt;a&gt;、&lt;b&gt;、&lt;em&gt;、&lt;img&gt;<br />
+	這些元素會與鄰近元素保持在同一行，他們稱為行內(inline)元素。
+</p>
+<hr />
+<h1>將文字和元素群組在區塊中</h1>
+<p>
+	&lt;div&gt;元素可以將一組元素群組起來，成為一個區塊層級的方塊。此元素的內容會在瀏覽器中另起一行。可以在&lt;/div&gt;結束標記中加入一個註解，以清楚看到他對應的開始標記。<br /><br />
+	語法: <br /><br />
+	&lt;div id=&quot;header&quot;&gt;<br />
+	&emsp;&lt;img src=&quot;images/wallpaper-1806999.jpg&quot; alt=&quot;some discribe&quot; width=&quot;720&quot; height=&quot;72&quot; /&gt;<br />
+	&emsp;&lt;ul&gt;<br />
+	&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;<br />
+	&emsp;&emsp;&lt;li&gt;&lt;a href=&quot;form.html&quot;&gt;Form&lt;/a&gt;&lt;/li&gt;<br />
+	&emsp;&lt;/ul&gt;<br />
+	&lt;/div&gt;&lt;!-- end of header --&gt;
+</p><br />
+<div id="header">
+	<img src="images/wallpaper-1806999.jpg" alt="some discribe" width="720" height="72" />
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="form.html">Form</a></li>
+	</ul>
+</div><!-- end of header --> 
+<hr />
+<h1>將文字和元素群組在行內</h1>
+<p>
+	語法: &lt;span&gt;元素的作用就像&lt;div&gt;元素的行內版本。他可以容納數個行內元素。可以將部分文字和周遭文字區隔出來。&lt;span&gt;經常使用class和id屬性。<br /><br />
+	&lt;p&gt;Anish Kapoor won the Turner Prize in 1991 and exhibited at the &lt;span class=&quot;gallery&quot;&gt;Tate Modern&lt;/span&gt; gallery in London in 2003.&lt;/p&gt;
+</p>
+<hr />
+<h1>IFRAMES</h1>
+<p>
+	iframe(inline frame)就像網頁上面切出來的一個小窗戶，在這個窗戶可以看到其他網頁。<br />
+	語法: &lt;iframe src=&quot;顯示在框內的頁面URL&quot; width=&quot;iframe的像素寬度&quot; height=&quot;iframe的像素高度&quot;
+	scrolling=&quot;HTML5不支援，有三個值:yes(顯示卷軸)、no(隱藏卷軸)、auto(只有需要的時候才顯示)&quot;
+	frameborder=&quot;HTML5不支援，有兩個值:0(不顯示邊框)、1(顯示邊框)&quot;
+	seamless(HTML5中使用，可以套用到不需要卷軸的iframe中，它不需要值)&gt;<br /><br />
+	&lt;iframe<br />
+	&emsp;src=&quot;https://www.google.com.tw/maps/place/Tokyo+Tower/@35.658618,139.7473027,16z/data=!3m1!5s0x60188bbd90bf26cf:0x4ceb5b05598646d0!4m2!3m1!1s0x60188bbd9009ec09:0x481a93f0d2a409dd?hl=zh-TW&quot;<br />
+	&emsp;width=&quot;600&quot;<br />
+	&emsp;height=&quot;450&quot;<br />
+	&emsp;frameborder=&quot;0&quot;<br />
+	&emsp;scrolling=&quot;no&quot;<br />
+	&emsp;seamless&gt;<br />
+	&lt;/iframe&gt;
+</p>
+<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3681.3324453943487!2d120.30143899999999!3d22.678665000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e050b14a03477%3A0x14ca246cfa286442!2zODEz6auY6ZuE5biC5bem54ef5Y2A5pS_5b636Lev!5e0!3m2!1szh-TW!2stw!4v1398282846212" width="600" height="450" frameborder="0" style="border:0"></iframe> -->
+<iframe
+	src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3681.3324453943487!2d120.30143899999999!3d22.678665000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e050b14a03477%3A0x14ca246cfa286442!2zODEz6auY6ZuE5biC5bem54ef5Y2A5pS_5b636Lev!5e0!3m2!1szh-TW!2stw!4v1398282758150"
+	width="600"
+	height="450"
+	frameborder="0"
+	style="border:0">
+</iframe>
+<hr />
+<h1>頁面相關資訊</h1>
+<p>
+	&lt;meta&gt;元素位在&lt;head&gt;元素內，包含了該網頁的相關資訊，它是一個空白元素，不需要結束標記。<br />
+	使用者看不到這些資訊，但滿足了一些目的，例如告訴瀏覽器關於此頁、作者、是否具時間性等資訊(網頁是否過期)。<br />
+	&lt;meta&gt;元素最常見的屬性是name or http-equiv和content，兩者通常會一起使用，name的值是你要設定的特性，content的值則是你想給予此特性的值。<br />
+	<table>
+		<tr>
+			<th scope="col">name or http-equiv</th>
+			<th scope="col">此name下content描述的內容</th>
+		</tr>
+		<tr>
+			<td>name=&quot;description&quot;</td>
+			<td>此頁的描述。通常被搜尋引擎用來了解頁面的內容。<br />最多155字元。有時候它也會出現在搜尋引擎的結果中。</td>
+		</tr>
+		<tr>
+			<td>name=&quot;keywords&quot;</td>
+			<td>包含了使用者可能用來搜尋此網頁的字詞清單。字詞之間用逗號分開。<br />在實際使用上，它對於搜尋引擎索引你的網站已經沒有任何明顯效果。</td>
+		</tr>
+		<tr>
+			<td>name=&quot;robots&quot;</td>
+			<td>標明了搜尋引擎是否應該將此頁加到他們搜尋結果中。如果不應該加入的話，可以使用noindex值。<br />如果要搜尋引擎加入此頁，但不加入此頁連結的其他頁面，那就使用nofollow值。</td>
+		</tr>
+		<tr>
+			<td>http-equiv=&quot;author&quot;</td>
+			<td>網頁作者。</td>
+		</tr>
+		<tr>
+			<td>http-equiv=&quot;pragma&quot;</td>
+			<td>避免瀏覽器儲存快取頁面。(content=&quot;no-cache&quot;)</td>
+		</tr>
+		<tr>
+			<td>http-equiv=&quot;expires&quot;</td>
+			<td>因為瀏覽器經常快取頁面內容，所以可以使用expires選項來標明頁面何時過期。<br />(content=&quot;Fri, 04 Apr 2014 23:59:59 GMT&quot;)</td>
+		</tr>
+	</table>
+	<br />
+	&lt;!DOCTYPE html&gt;<br />
+	&lt;html&gt;<br />
+	&emsp;&lt;head&gt;<br />
+	&emsp;&emsp;&lt;title&gt;Information About Your Pages&lt;/title&gt;<br />
+	&emsp;&emsp;&lt;meta name=&quot;description&quot; content=&quot;An Essay on Installation Art&quot; /&gt;<br />
+	&emsp;&emsp;&lt;meta name=&quot;keywords&quot; content=&quot;installation, art, opinion&quot; /&gt;<br />
+	&emsp;&emsp;&lt;meta name=&quot;robots&quot; content=&quot;nofollow&quot; /&gt;<br />
+	&emsp;&emsp;&lt;meta http-equiv=&quot;author&quot; content=&quot;Coreyou&quot; /&gt;<br />
+	&emsp;&emsp;&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot; /&gt;<br />
+	&emsp;&emsp;&lt;meta http-equiv=&quot;expires&quot; content=&quot;Fri, 04 Apr 2014 23:59:59 GMT&quot; /&gt;<br />
+	&emsp;&lt;/head&gt;<br />
+	&emsp;&lt;body&gt;<br />
+	&emsp;&lt;/body&gt;<br />
+	&lt;/html&gt;
+</p>
+<hr />
+</body>
+</html>
